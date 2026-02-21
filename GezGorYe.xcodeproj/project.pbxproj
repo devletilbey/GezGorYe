@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FF98C541E985A79FF37E3A4 /* RouteOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221368CCAEA1645EB2FD7871 /* RouteOptimizer.swift */; };
+		23CE6E9B914510B19F00903A /* RootMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA035F29DAEFF6F69132E1B /* RootMapView.swift */; };
+		31D0AC86BA5364719CA36892 /* CityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454714AC3631B1FFCF64FDEB /* CityDetailView.swift */; };
+		5B45310BC0AABAF392472F23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABFD04E12155B8A6E08E7899 /* Assets.xcassets */; };
+		5CC9869F6116722FE2FC5B3D /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 290F457665FE825EF9751359 /* cities.json */; };
+		6D7ECF5742FDE5894363FD60 /* CityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14785266F4AC627B6FFC1B99 /* CityRepository.swift */; };
+		BA779218869843F5E5878050 /* RouteOptimizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854235CFDE3DD1579AB29467 /* RouteOptimizerTests.swift */; };
+		BFD0BA59C22A65ADAB8FC5B3 /* GezGorYeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE242F11FB6F4A6E746F3DC /* GezGorYeApp.swift */; };
+		D3FA499E2FC1163099EDA820 /* TravelGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6EE0FBD3FFEE22B36B2688 /* TravelGuideViewModel.swift */; };
+		D97CAEE253B549901FFE769F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4B109327E5D731C953326 /* AppSettings.swift */; };
+		F478D625650A519352D45ACF /* CityModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAD86E1096A862259A5707 /* CityModels.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9EA69DDCDDB7AD7255E81A3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F1F34FEC45F51D4A69526B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6789C1067B359B908DF11F75;
+			remoteInfo = GezGorYe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14785266F4AC627B6FFC1B99 /* CityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRepository.swift; sourceTree = "<group>"; };
+		221368CCAEA1645EB2FD7871 /* RouteOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOptimizer.swift; sourceTree = "<group>"; };
+		290F457665FE825EF9751359 /* cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		454714AC3631B1FFCF64FDEB /* CityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailView.swift; sourceTree = "<group>"; };
+		4B575B97F51098422B1B3E00 /* GezGorYeTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GezGorYeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A6EE0FBD3FFEE22B36B2688 /* TravelGuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelGuideViewModel.swift; sourceTree = "<group>"; };
+		854235CFDE3DD1579AB29467 /* RouteOptimizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOptimizerTests.swift; sourceTree = "<group>"; };
+		ABFD04E12155B8A6E08E7899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BEDAD86E1096A862259A5707 /* CityModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModels.swift; sourceTree = "<group>"; };
+		C6E4B109327E5D731C953326 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		DA7B11DBDFEEE451947AD99B /* GezGorYe.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GezGorYe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB31C5F5B0E467CCB1FC6634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EDA035F29DAEFF6F69132E1B /* RootMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMapView.swift; sourceTree = "<group>"; };
+		FBE242F11FB6F4A6E746F3DC /* GezGorYeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GezGorYeApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0AB2072671F2C2947A3401EE /* GezGorYe */ = {
+			isa = PBXGroup;
+			children = (
+				E74282D79609BDFABBB2C2BD /* App */,
+				25BF900AAAD01A5570D4701E /* Models */,
+				7D955CAB711F94E448D3CCC2 /* Resources */,
+				103DE142EFDE173FB84B47A5 /* Services */,
+				5B269C686A046CFAB14ACBFF /* Support */,
+				DD72A4CE2CB214AD254FEBA2 /* ViewModels */,
+				AB47425D4EB7CCB59C4A5049 /* Views */,
+			);
+			path = GezGorYe;
+			sourceTree = "<group>";
+		};
+		103DE142EFDE173FB84B47A5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				14785266F4AC627B6FFC1B99 /* CityRepository.swift */,
+				221368CCAEA1645EB2FD7871 /* RouteOptimizer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		25BF900AAAD01A5570D4701E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEDAD86E1096A862259A5707 /* CityModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B269C686A046CFAB14ACBFF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EB31C5F5B0E467CCB1FC6634 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		7BF2DE9AD5C9B7A9DB9A004C /* GezGorYeTests */ = {
+			isa = PBXGroup;
+			children = (
+				854235CFDE3DD1579AB29467 /* RouteOptimizerTests.swift */,
+			);
+			path = GezGorYeTests;
+			sourceTree = "<group>";
+		};
+		7D955CAB711F94E448D3CCC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ABFD04E12155B8A6E08E7899 /* Assets.xcassets */,
+				290F457665FE825EF9751359 /* cities.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		99115727BA1606D07A725450 = {
+			isa = PBXGroup;
+			children = (
+				0AB2072671F2C2947A3401EE /* GezGorYe */,
+				7BF2DE9AD5C9B7A9DB9A004C /* GezGorYeTests */,
+				C61EDD4EF164756489D42077 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB47425D4EB7CCB59C4A5049 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				454714AC3631B1FFCF64FDEB /* CityDetailView.swift */,
+				EDA035F29DAEFF6F69132E1B /* RootMapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C61EDD4EF164756489D42077 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA7B11DBDFEEE451947AD99B /* GezGorYe.app */,
+				4B575B97F51098422B1B3E00 /* GezGorYeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD72A4CE2CB214AD254FEBA2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C6E4B109327E5D731C953326 /* AppSettings.swift */,
+				7A6EE0FBD3FFEE22B36B2688 /* TravelGuideViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E74282D79609BDFABBB2C2BD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FBE242F11FB6F4A6E746F3DC /* GezGorYeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6789C1067B359B908DF11F75 /* GezGorYe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BDA3FC4A2DDBF6881C3CF30 /* Build configuration list for PBXNativeTarget "GezGorYe" */;
+			buildPhases = (
+				A96FEF7E2F01E22C2562C2D6 /* Sources */,
+				95732717EED93BBA23112FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GezGorYe;
+			packageProductDependencies = (
+			);
+			productName = GezGorYe;
+			productReference = DA7B11DBDFEEE451947AD99B /* GezGorYe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F9775A38C4DAE20F5802DCC8 /* GezGorYeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 296B7B0B1D70710ACE052117 /* Build configuration list for PBXNativeTarget "GezGorYeTests" */;
+			buildPhases = (
+				A8F16C34D096ACECD1B19C0E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				844BC57BE39066D5D1103F93 /* PBXTargetDependency */,
+			);
+			name = GezGorYeTests;
+			packageProductDependencies = (
+			);
+			productName = GezGorYeTests;
+			productReference = 4B575B97F51098422B1B3E00 /* GezGorYeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F1F34FEC45F51D4A69526B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = C16916024A6F49871AE78A6B /* Build configuration list for PBXProject "GezGorYe" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 99115727BA1606D07A725450;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6789C1067B359B908DF11F75 /* GezGorYe */,
+				F9775A38C4DAE20F5802DCC8 /* GezGorYeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95732717EED93BBA23112FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B45310BC0AABAF392472F23 /* Assets.xcassets in Resources */,
+				5CC9869F6116722FE2FC5B3D /* cities.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8F16C34D096ACECD1B19C0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA779218869843F5E5878050 /* RouteOptimizerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A96FEF7E2F01E22C2562C2D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D97CAEE253B549901FFE769F /* AppSettings.swift in Sources */,
+				31D0AC86BA5364719CA36892 /* CityDetailView.swift in Sources */,
+				F478D625650A519352D45ACF /* CityModels.swift in Sources */,
+				6D7ECF5742FDE5894363FD60 /* CityRepository.swift in Sources */,
+				BFD0BA59C22A65ADAB8FC5B3 /* GezGorYeApp.swift in Sources */,
+				23CE6E9B914510B19F00903A /* RootMapView.swift in Sources */,
+				1FF98C541E985A79FF37E3A4 /* RouteOptimizer.swift in Sources */,
+				D3FA499E2FC1163099EDA820 /* TravelGuideViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		844BC57BE39066D5D1103F93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6789C1067B359B908DF11F75 /* GezGorYe */;
+			targetProxy = 9EA69DDCDDB7AD7255E81A3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		474272A7A57227E874DAF68F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GezGorYe/Support/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.serdar.GezGorYe;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		73A37E4B11A398C948E47332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+		96683C2DD6C4DBE2B99F7943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		B7ADA947D3AED0503F76BA57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.serdar.GezGorYeTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GezGorYe.app/GezGorYe";
+			};
+			name = Release;
+		};
+		DA4C536E322598540E91111C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.serdar.GezGorYeTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GezGorYe.app/GezGorYe";
+			};
+			name = Debug;
+		};
+		FD20C6D367FB9F376C802A3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GezGorYe/Support/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.serdar.GezGorYe;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BDA3FC4A2DDBF6881C3CF30 /* Build configuration list for PBXNativeTarget "GezGorYe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				474272A7A57227E874DAF68F /* Debug */,
+				FD20C6D367FB9F376C802A3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		296B7B0B1D70710ACE052117 /* Build configuration list for PBXNativeTarget "GezGorYeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA4C536E322598540E91111C /* Debug */,
+				B7ADA947D3AED0503F76BA57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C16916024A6F49871AE78A6B /* Build configuration list for PBXProject "GezGorYe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96683C2DD6C4DBE2B99F7943 /* Debug */,
+				73A37E4B11A398C948E47332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F1F34FEC45F51D4A69526B9 /* Project object */;
+}
