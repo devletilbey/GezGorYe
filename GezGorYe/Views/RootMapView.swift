@@ -408,6 +408,10 @@ private struct DarkAppleMapView: UIViewRepresentable {
                     count: cluster.memberAnnotations.count,
                     accent: parent.accentColor
                 )
+                view.layer.shadowColor = UIColor.black.cgColor
+                view.layer.shadowOpacity = 0.34
+                view.layer.shadowRadius = 10
+                view.layer.shadowOffset = CGSize(width: 0, height: 4)
                 return view
             }
 
@@ -425,6 +429,10 @@ private struct DarkAppleMapView: UIViewRepresentable {
                     selected: cityAnnotation.isSelected,
                     accent: parent.accentColor
                 )
+                view.layer.shadowColor = UIColor.black.cgColor
+                view.layer.shadowOpacity = cityAnnotation.isSelected ? 0.32 : 0.24
+                view.layer.shadowRadius = cityAnnotation.isSelected ? 12 : 8
+                view.layer.shadowOffset = CGSize(width: 0, height: 4)
                 return view
             }
 
@@ -438,6 +446,10 @@ private struct DarkAppleMapView: UIViewRepresentable {
                 view.collisionMode = .circle
                 view.centerOffset = CGPoint(x: 0, y: -4)
                 view.image = PremiumMapIconFactory.center(accent: parent.accentColor)
+                view.layer.shadowColor = UIColor.black.cgColor
+                view.layer.shadowOpacity = 0.28
+                view.layer.shadowRadius = 12
+                view.layer.shadowOffset = CGSize(width: 0, height: 4)
                 return view
             }
 
@@ -456,6 +468,10 @@ private struct DarkAppleMapView: UIViewRepresentable {
                     tint: poiAnnotation.poi.category.mapIconTint,
                     accent: parent.secondaryAccentColor
                 )
+                view.layer.shadowColor = UIColor.black.cgColor
+                view.layer.shadowOpacity = 0.26
+                view.layer.shadowRadius = 9
+                view.layer.shadowOffset = CGSize(width: 0, height: 4)
 
                 let detail = UILabel()
                 detail.numberOfLines = 2
@@ -479,45 +495,63 @@ private enum PremiumMapIconFactory {
         let key = "city-\(selected)-\(accent.cacheKey)"
         if let cached = cache[key] { return cached }
 
-        let image = render(size: CGSize(width: 34, height: 42)) { rect in
-            let pinRect = CGRect(x: 4, y: 2, width: 26, height: 34)
-            let headRect = CGRect(x: 4, y: 2, width: 26, height: 26)
+        let image = render(size: CGSize(width: 40, height: 52)) { rect in
+            let ctx = UIGraphicsGetCurrentContext()
+            let headRect = CGRect(x: 6, y: 4, width: 28, height: 28)
+            let pinPath = cityPinPath(in: rect)
 
-            UIColor.black.withAlphaComponent(selected ? 0.35 : 0.25).setFill()
-            UIBezierPath(ovalIn: headRect.insetBy(dx: -1, dy: -1)).fill()
-
-            let pointerPath = UIBezierPath()
-            pointerPath.move(to: CGPoint(x: rect.midX, y: 38))
-            pointerPath.addLine(to: CGPoint(x: rect.midX - 5.5, y: 24))
-            pointerPath.addLine(to: CGPoint(x: rect.midX + 5.5, y: 24))
-            pointerPath.close()
-            (selected ? accent : UIColor(white: 0.94, alpha: 0.96)).setFill()
-            pointerPath.fill()
-
-            let headColor = selected ? accent : UIColor(white: 0.97, alpha: 0.97)
-            headColor.setFill()
-            UIBezierPath(ovalIn: headRect).fill()
-
-            UIColor.white.withAlphaComponent(selected ? 0.34 : 0.65).setStroke()
-            UIBezierPath(ovalIn: headRect).stroke(lineWidth: 1.2)
-
-            let innerRect = headRect.insetBy(dx: 5, dy: 5)
-            UIColor.black.withAlphaComponent(selected ? 0.12 : 0.06).setFill()
-            UIBezierPath(ovalIn: innerRect).fill()
-
-            let symbolName = selected ? "sparkles" : "building.2.crop.circle"
-            let symbolConfig = UIImage.SymbolConfiguration(pointSize: 12, weight: .bold)
-            let symbol = UIImage(systemName: symbolName, withConfiguration: symbolConfig)?
-                .withTintColor(selected ? .white : UIColor(white: 0.12, alpha: 1), renderingMode: .alwaysOriginal)
-            let symbolRect = CGRect(x: innerRect.midX - 7, y: innerRect.midY - 7, width: 14, height: 14)
-            symbol?.draw(in: symbolRect)
+            UIColor.black.withAlphaComponent(0.20).setFill()
+            UIBezierPath(ovalIn: CGRect(x: 10, y: 40, width: 20, height: 6)).fill()
 
             if selected {
-                UIColor.white.withAlphaComponent(0.32).setStroke()
-                UIBezierPath(ovalIn: headRect.insetBy(dx: -2.5, dy: -2.5)).stroke(lineWidth: 1.4)
+                UIColor.white.withAlphaComponent(0.10).setFill()
+                UIBezierPath(ovalIn: headRect.insetBy(dx: -5, dy: -5)).fill()
+                drawGradientRing(
+                    in: headRect.insetBy(dx: -4.5, dy: -4.5),
+                    width: 2.0,
+                    colors: [accent.withAlphaComponent(0.65), UIColor.white.withAlphaComponent(0.35)]
+                )
             }
 
-            _ = pinRect
+            let selectedTop = UIColor(red: 0.95, green: 0.84, blue: 0.56, alpha: 1)
+            let selectedBottom = UIColor(red: 0.76, green: 0.58, blue: 0.23, alpha: 1)
+            fill(path: pinPath, with: selected
+                 ? [selectedTop, selectedBottom]
+                 : [UIColor(white: 0.98, alpha: 0.98), UIColor(white: 0.86, alpha: 0.98)]
+            , in: ctx)
+
+            UIColor.white.withAlphaComponent(selected ? 0.42 : 0.72).setStroke()
+            pinPath.stroke(lineWidth: 1.05)
+
+            let inner = headRect.insetBy(dx: 5.2, dy: 5.2)
+            fillCircle(
+                inner,
+                colors: selected
+                    ? [UIColor(red: 0.22, green: 0.18, blue: 0.10, alpha: 0.95), UIColor(red: 0.09, green: 0.08, blue: 0.06, alpha: 0.95)]
+                    : [UIColor.white.withAlphaComponent(0.92), UIColor(white: 0.90, alpha: 0.92)],
+                in: ctx
+            )
+
+            if selected {
+                drawGradientRing(
+                    in: inner.insetBy(dx: -1.3, dy: -1.3),
+                    width: 1.5,
+                    colors: [selectedTop.withAlphaComponent(0.95), UIColor.white.withAlphaComponent(0.25)]
+                )
+            }
+
+            UIColor.white.withAlphaComponent(selected ? 0.20 : 0.55).setStroke()
+            UIBezierPath(ovalIn: inner).stroke(lineWidth: 0.8)
+
+            let symbolName = "building.columns.fill"
+            let symbolConfig = UIImage.SymbolConfiguration(pointSize: selected ? 11.5 : 10.5, weight: .bold)
+            let symbol = UIImage(systemName: symbolName, withConfiguration: symbolConfig)?
+                .withTintColor(selected ? selectedTop : UIColor(white: 0.14, alpha: 1), renderingMode: .alwaysOriginal)
+            symbol?.draw(in: CGRect(x: inner.midX - 6.5, y: inner.midY - 6.5, width: 13, height: 13))
+
+            UIColor.white.withAlphaComponent(selected ? 0.18 : 0.34).setFill()
+            let gloss = UIBezierPath(ovalIn: CGRect(x: headRect.minX + 4, y: headRect.minY + 3, width: 14, height: 6))
+            gloss.fill()
         }
 
         cache[key] = image
@@ -528,28 +562,35 @@ private enum PremiumMapIconFactory {
         let key = "center-\(accent.cacheKey)"
         if let cached = cache[key] { return cached }
 
-        let image = render(size: CGSize(width: 36, height: 36)) { rect in
-            UIColor.black.withAlphaComponent(0.32).setFill()
-            UIBezierPath(ovalIn: rect.insetBy(dx: 2, dy: 2)).fill()
-
-            accent.withAlphaComponent(0.95).setStroke()
-            UIBezierPath(ovalIn: rect.insetBy(dx: 5, dy: 5)).stroke(lineWidth: 2.4)
-
-            UIColor.white.withAlphaComponent(0.9).setStroke()
-            UIBezierPath(ovalIn: rect.insetBy(dx: 11, dy: 11)).stroke(lineWidth: 2)
-
+        let image = render(size: CGSize(width: 40, height: 40)) { rect in
             let ctx = UIGraphicsGetCurrentContext()
-            ctx?.setStrokeColor(UIColor.white.withAlphaComponent(0.85).cgColor)
-            ctx?.setLineWidth(1.5)
-            ctx?.move(to: CGPoint(x: rect.midX, y: 2))
-            ctx?.addLine(to: CGPoint(x: rect.midX, y: 9))
-            ctx?.move(to: CGPoint(x: rect.midX, y: rect.maxY - 2))
-            ctx?.addLine(to: CGPoint(x: rect.midX, y: rect.maxY - 9))
-            ctx?.move(to: CGPoint(x: 2, y: rect.midY))
-            ctx?.addLine(to: CGPoint(x: 9, y: rect.midY))
-            ctx?.move(to: CGPoint(x: rect.maxX - 2, y: rect.midY))
-            ctx?.addLine(to: CGPoint(x: rect.maxX - 9, y: rect.midY))
-            ctx?.strokePath()
+            UIColor.black.withAlphaComponent(0.22).setFill()
+            UIBezierPath(ovalIn: rect.insetBy(dx: 3, dy: 3)).fill()
+
+            fillCircle(rect.insetBy(dx: 5, dy: 5),
+                       colors: [UIColor(white: 0.12, alpha: 0.95), UIColor(white: 0.05, alpha: 0.95)],
+                       in: ctx)
+
+            drawGradientRing(
+                in: rect.insetBy(dx: 6.5, dy: 6.5),
+                width: 2.6,
+                colors: [accent.adjusted(brightness: 1.2), accent.adjusted(brightness: 0.85)]
+            )
+            UIColor.white.withAlphaComponent(0.92).setStroke()
+            UIBezierPath(ovalIn: rect.insetBy(dx: 13, dy: 13)).stroke(lineWidth: 1.8)
+
+            let crosshairContext = UIGraphicsGetCurrentContext()
+            crosshairContext?.setStrokeColor(UIColor.white.withAlphaComponent(0.85).cgColor)
+            crosshairContext?.setLineWidth(1.5)
+            crosshairContext?.move(to: CGPoint(x: rect.midX, y: 2))
+            crosshairContext?.addLine(to: CGPoint(x: rect.midX, y: 8.5))
+            crosshairContext?.move(to: CGPoint(x: rect.midX, y: rect.maxY - 2))
+            crosshairContext?.addLine(to: CGPoint(x: rect.midX, y: rect.maxY - 8.5))
+            crosshairContext?.move(to: CGPoint(x: 2, y: rect.midY))
+            crosshairContext?.addLine(to: CGPoint(x: 8.5, y: rect.midY))
+            crosshairContext?.move(to: CGPoint(x: rect.maxX - 2, y: rect.midY))
+            crosshairContext?.addLine(to: CGPoint(x: rect.maxX - 8.5, y: rect.midY))
+            crosshairContext?.strokePath()
         }
 
         cache[key] = image
@@ -560,38 +601,39 @@ private enum PremiumMapIconFactory {
         let key = "poi-\(symbol)-\(tint.cacheKey)-\(accent.cacheKey)"
         if let cached = cache[key] { return cached }
 
-        let image = render(size: CGSize(width: 30, height: 38)) { rect in
-            let headRect = CGRect(x: 3, y: 2, width: 24, height: 24)
+        let image = render(size: CGSize(width: 34, height: 44)) { rect in
+            let ctx = UIGraphicsGetCurrentContext()
+            let shell = poiPinPath(in: rect)
+            let badge = CGRect(x: 6, y: 4, width: 22, height: 22)
 
-            UIColor.black.withAlphaComponent(0.28).setFill()
-            UIBezierPath(ovalIn: headRect.insetBy(dx: -1, dy: -1)).fill()
+            UIColor.black.withAlphaComponent(0.20).setFill()
+            UIBezierPath(ovalIn: CGRect(x: 10, y: 34, width: 14, height: 5)).fill()
 
-            let pointer = UIBezierPath()
-            pointer.move(to: CGPoint(x: rect.midX, y: 34))
-            pointer.addLine(to: CGPoint(x: rect.midX - 4.6, y: 22))
-            pointer.addLine(to: CGPoint(x: rect.midX + 4.6, y: 22))
-            pointer.close()
-            tint.withAlphaComponent(0.95).setFill()
-            pointer.fill()
+            fill(path: shell, with: [UIColor(white: 0.12, alpha: 0.96), UIColor(white: 0.06, alpha: 0.96)], in: ctx)
+            UIColor.white.withAlphaComponent(0.30).setStroke()
+            shell.stroke(lineWidth: 0.9)
 
-            tint.withAlphaComponent(0.96).setFill()
-            UIBezierPath(ovalIn: headRect).fill()
+            drawGradientRing(
+                in: badge.insetBy(dx: -1.2, dy: -1.2),
+                width: 2.4,
+                colors: [tint.adjusted(brightness: 1.2), tint.adjusted(brightness: 0.85)]
+            )
+            fillCircle(badge, colors: [tint.adjusted(brightness: 1.08), tint.adjusted(brightness: 0.92)], in: ctx)
+            UIColor.white.withAlphaComponent(0.65).setStroke()
+            UIBezierPath(ovalIn: badge).stroke(lineWidth: 0.7)
 
-            UIColor.white.withAlphaComponent(0.75).setStroke()
-            UIBezierPath(ovalIn: headRect).stroke(lineWidth: 1)
+            let glossRect = CGRect(x: badge.minX + 3, y: badge.minY + 2.5, width: 10, height: 4)
+            UIColor.white.withAlphaComponent(0.22).setFill()
+            UIBezierPath(ovalIn: glossRect).fill()
 
-            let inner = headRect.insetBy(dx: 4.5, dy: 4.5)
-            UIColor.white.withAlphaComponent(0.14).setFill()
-            UIBezierPath(ovalIn: inner).fill()
-
-            let config = UIImage.SymbolConfiguration(pointSize: 10.5, weight: .bold)
+            let config = UIImage.SymbolConfiguration(pointSize: 10, weight: .bold)
             let symbolImage = UIImage(systemName: symbol, withConfiguration: config)?
                 .withTintColor(.white, renderingMode: .alwaysOriginal)
-            symbolImage?.draw(in: CGRect(x: inner.midX - 6, y: inner.midY - 6, width: 12, height: 12))
+            symbolImage?.draw(in: CGRect(x: badge.midX - 6, y: badge.midY - 6, width: 12, height: 12))
 
             if symbol == "fork.knife" {
-                accent.withAlphaComponent(0.25).setStroke()
-                UIBezierPath(ovalIn: headRect.insetBy(dx: -2, dy: -2)).stroke(lineWidth: 1.2)
+                accent.withAlphaComponent(0.35).setStroke()
+                UIBezierPath(ovalIn: badge.insetBy(dx: -2.8, dy: -2.8)).stroke(lineWidth: 1.1)
             }
         }
 
@@ -603,23 +645,24 @@ private enum PremiumMapIconFactory {
         let key = "cluster-\(min(count, 99))-\(accent.cacheKey)"
         if let cached = cache[key] { return cached }
 
-        let image = render(size: CGSize(width: 40, height: 40)) { rect in
-            let backRect = rect.insetBy(dx: 7, dy: 7)
-            UIColor.black.withAlphaComponent(0.3).setFill()
-            UIBezierPath(ovalIn: backRect.offsetBy(dx: 2, dy: 2)).fill()
+        let image = render(size: CGSize(width: 46, height: 46)) { rect in
+            let ctx = UIGraphicsGetCurrentContext()
+            let core = rect.insetBy(dx: 8, dy: 8)
 
-            accent.withAlphaComponent(0.32).setFill()
-            UIBezierPath(ovalIn: backRect.offsetBy(dx: -2, dy: -2)).fill()
+            UIColor.black.withAlphaComponent(0.18).setFill()
+            UIBezierPath(ovalIn: core.offsetBy(dx: 0, dy: 4)).fill()
 
-            UIColor(white: 0.08, alpha: 0.9).setFill()
-            UIBezierPath(ovalIn: backRect).fill()
+            UIColor.white.withAlphaComponent(0.07).setFill()
+            UIBezierPath(ovalIn: core.insetBy(dx: -4, dy: -4)).fill()
 
-            UIColor.white.withAlphaComponent(0.18).setStroke()
-            UIBezierPath(ovalIn: backRect).stroke(lineWidth: 1.2)
+            fillCircle(core, colors: [UIColor(white: 0.13, alpha: 0.96), UIColor(white: 0.05, alpha: 0.98)], in: ctx)
+            drawGradientRing(in: core.insetBy(dx: -1, dy: -1), width: 2.2, colors: [accent.withAlphaComponent(0.9), UIColor.white.withAlphaComponent(0.22)])
+            UIColor.white.withAlphaComponent(0.12).setStroke()
+            UIBezierPath(ovalIn: core).stroke(lineWidth: 0.8)
 
             let text = count > 99 ? "99+" : "\(count)"
             let attrs: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: count > 9 ? 12 : 13, weight: .bold),
+                .font: UIFont.systemFont(ofSize: count > 9 ? 12 : 13.5, weight: .bold),
                 .foregroundColor: UIColor.white
             ]
             let textSize = (text as NSString).size(withAttributes: attrs)
@@ -630,6 +673,9 @@ private enum PremiumMapIconFactory {
                 height: textSize.height
             )
             (text as NSString).draw(in: textRect, withAttributes: attrs)
+
+            UIColor.white.withAlphaComponent(0.18).setFill()
+            UIBezierPath(ovalIn: CGRect(x: core.minX + 4, y: core.minY + 3, width: 10, height: 4)).fill()
         }
 
         cache[key] = image
@@ -643,6 +689,81 @@ private enum PremiumMapIconFactory {
             drawing(CGRect(origin: .zero, size: size))
         }
     }
+
+    private static func cityPinPath(in rect: CGRect) -> UIBezierPath {
+        let path = UIBezierPath()
+        let cx = rect.midX
+        let topY: CGFloat = 4
+        let headBottomY: CGFloat = 32
+        let bottomY: CGFloat = 45
+
+        path.move(to: CGPoint(x: cx, y: bottomY))
+        path.addCurve(to: CGPoint(x: 6, y: 18),
+                      controlPoint1: CGPoint(x: cx - 10, y: 36),
+                      controlPoint2: CGPoint(x: 7, y: 30))
+        path.addArc(withCenter: CGPoint(x: cx, y: 18), radius: 14, startAngle: .pi, endAngle: 0, clockwise: true)
+        path.addCurve(to: CGPoint(x: cx, y: bottomY),
+                      controlPoint1: CGPoint(x: 33, y: 30),
+                      controlPoint2: CGPoint(x: cx + 10, y: 36))
+        path.close()
+        _ = topY
+        _ = headBottomY
+        return path
+    }
+
+    private static func poiPinPath(in rect: CGRect) -> UIBezierPath {
+        let path = UIBezierPath()
+        let cx = rect.midX
+        path.move(to: CGPoint(x: cx, y: 37))
+        path.addCurve(to: CGPoint(x: 5, y: 16),
+                      controlPoint1: CGPoint(x: cx - 7.5, y: 30),
+                      controlPoint2: CGPoint(x: 5, y: 24))
+        path.addArc(withCenter: CGPoint(x: cx, y: 16), radius: 11, startAngle: .pi, endAngle: 0, clockwise: true)
+        path.addCurve(to: CGPoint(x: cx, y: 37),
+                      controlPoint1: CGPoint(x: 29, y: 24),
+                      controlPoint2: CGPoint(x: cx + 7.5, y: 30))
+        path.close()
+        return path
+    }
+
+    private static func fill(path: UIBezierPath, with colors: [UIColor], in context: CGContext?) {
+        guard let context else { return }
+        context.saveGState()
+        path.addClip()
+        drawVerticalGradient(in: context, rect: path.bounds.insetBy(dx: -2, dy: -2), colors: colors)
+        context.restoreGState()
+    }
+
+    private static func fillCircle(_ rect: CGRect, colors: [UIColor], in context: CGContext?) {
+        guard let context else { return }
+        let path = UIBezierPath(ovalIn: rect)
+        context.saveGState()
+        path.addClip()
+        drawVerticalGradient(in: context, rect: rect, colors: colors)
+        context.restoreGState()
+    }
+
+    private static func drawGradientRing(in rect: CGRect, width: CGFloat, colors: [UIColor]) {
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        let ringPath = UIBezierPath(ovalIn: rect)
+        let innerPath = UIBezierPath(ovalIn: rect.insetBy(dx: width, dy: width))
+        ringPath.append(innerPath.reversing())
+        context.saveGState()
+        ringPath.addClip()
+        drawVerticalGradient(in: context, rect: rect, colors: colors)
+        context.restoreGState()
+    }
+
+    private static func drawVerticalGradient(in context: CGContext, rect: CGRect, colors: [UIColor]) {
+        let cgColors = colors.map(\.cgColor) as CFArray
+        guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: cgColors, locations: nil) else { return }
+        context.drawLinearGradient(
+            gradient,
+            start: CGPoint(x: rect.midX, y: rect.minY),
+            end: CGPoint(x: rect.midX, y: rect.maxY),
+            options: []
+        )
+    }
 }
 
 private extension UIColor {
@@ -650,6 +771,21 @@ private extension UIColor {
         guard let comps = cgColor.components else { return "0" }
         let vals = comps.map { Int(($0 * 255).rounded()) }
         return vals.map(String.init).joined(separator: "-")
+    }
+
+    func adjusted(brightness: CGFloat) -> UIColor {
+        var hue: CGFloat = 0
+        var sat: CGFloat = 0
+        var bri: CGFloat = 0
+        var alpha: CGFloat = 0
+        if getHue(&hue, saturation: &sat, brightness: &bri, alpha: &alpha) {
+            return UIColor(hue: hue, saturation: sat, brightness: max(0, min(1, bri * brightness)), alpha: alpha)
+        }
+        var white: CGFloat = 0
+        if getWhite(&white, alpha: &alpha) {
+            return UIColor(white: max(0, min(1, white * brightness)), alpha: alpha)
+        }
+        return self
     }
 }
 
