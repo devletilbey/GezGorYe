@@ -363,8 +363,18 @@ private struct DarkAppleMapView: UIViewRepresentable {
         }
 
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            UIView.animate(withDuration: 0.18, delay: 0, options: [.curveEaseOut]) {
+                view.transform = CGAffineTransform(scaleX: 1.08, y: 1.08)
+            }
+
             guard let annotation = view.annotation as? CityAnnotation else { return }
             parent.onSelectCity(annotation.city)
+        }
+
+        func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+            UIView.animate(withDuration: 0.18, delay: 0, options: [.curveEaseOut]) {
+                view.transform = .identity
+            }
         }
 
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -385,46 +395,284 @@ private struct DarkAppleMapView: UIViewRepresentable {
                 return nil
             }
 
-            if let cityAnnotation = annotation as? CityAnnotation {
-                let identifier = "city"
-                let view = (mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView)
-                    ?? MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            if let cluster = annotation as? MKClusterAnnotation {
+                let identifier = "cluster"
+                let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                    ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.annotation = annotation
                 view.canShowCallout = false
+                view.collisionMode = .circle
                 view.displayPriority = .required
-                view.markerTintColor = cityAnnotation.isSelected ? parent.accentColor : UIColor.white
-                view.glyphImage = UIImage(systemName: cityAnnotation.isSelected ? "mappin.circle.fill" : "mappin.circle")
-                view.glyphTintColor = cityAnnotation.isSelected ? .white : .black
+                view.centerOffset = CGPoint(x: 0, y: -2)
+                view.image = PremiumMapIconFactory.cluster(
+                    count: cluster.memberAnnotations.count,
+                    accent: parent.accentColor
+                )
+                return view
+            }
+
+            if let cityAnnotation = annotation as? CityAnnotation {
+                let identifier = "city"
+                let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                    ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.annotation = annotation
+                view.canShowCallout = false
+                view.displayPriority = cityAnnotation.isSelected ? .required : .defaultHigh
+                view.collisionMode = .circle
+                view.clusteringIdentifier = "city"
+                view.centerOffset = CGPoint(x: 0, y: -4)
+                view.image = PremiumMapIconFactory.city(
+                    selected: cityAnnotation.isSelected,
+                    accent: parent.accentColor
+                )
                 return view
             }
 
             if annotation is CenterAnnotation {
                 let identifier = "center"
-                let view = (mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView)
-                    ?? MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                    ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.annotation = annotation
                 view.canShowCallout = false
                 view.displayPriority = .required
-                view.markerTintColor = parent.accentColor
-                view.glyphImage = UIImage(systemName: "scope")
-                view.glyphTintColor = .white
+                view.collisionMode = .circle
+                view.centerOffset = CGPoint(x: 0, y: -4)
+                view.image = PremiumMapIconFactory.center(accent: parent.accentColor)
                 return view
             }
 
             if let poiAnnotation = annotation as? POIAnnotation {
                 let identifier = "poi"
-                let view = (mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView)
-                    ?? MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                    ?? MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.annotation = annotation
                 view.canShowCallout = true
                 view.displayPriority = .defaultHigh
-                view.markerTintColor = parent.secondaryAccentColor
-                view.glyphImage = UIImage(systemName: poiAnnotation.poi.category.symbol)
-                view.glyphTintColor = .black
+                view.collisionMode = .circle
+                view.clusteringIdentifier = nil
+                view.centerOffset = CGPoint(x: 0, y: -4)
+                view.image = PremiumMapIconFactory.poi(
+                    symbol: poiAnnotation.poi.category.symbol,
+                    tint: poiAnnotation.poi.category.mapIconTint,
+                    accent: parent.secondaryAccentColor
+                )
+
+                let detail = UILabel()
+                detail.numberOfLines = 2
+                detail.font = .systemFont(ofSize: 12, weight: .medium)
+                detail.textColor = .secondaryLabel
+                detail.text = "\(poiAnnotation.poi.recommendedVisitMinutes) dk • \(poiAnnotation.poi.shortDescription)"
+                detail.preferredMaxLayoutWidth = 220
+                view.detailCalloutAccessoryView = detail
                 return view
             }
 
             return nil
+        }
+    }
+}
+
+private enum PremiumMapIconFactory {
+    private static var cache: [String: UIImage] = [:]
+
+    static func city(selected: Bool, accent: UIColor) -> UIImage {
+        let key = "city-\(selected)-\(accent.cacheKey)"
+        if let cached = cache[key] { return cached }
+
+        let image = render(size: CGSize(width: 34, height: 42)) { rect in
+            let pinRect = CGRect(x: 4, y: 2, width: 26, height: 34)
+            let headRect = CGRect(x: 4, y: 2, width: 26, height: 26)
+
+            UIColor.black.withAlphaComponent(selected ? 0.35 : 0.25).setFill()
+            UIBezierPath(ovalIn: headRect.insetBy(dx: -1, dy: -1)).fill()
+
+            let pointerPath = UIBezierPath()
+            pointerPath.move(to: CGPoint(x: rect.midX, y: 38))
+            pointerPath.addLine(to: CGPoint(x: rect.midX - 5.5, y: 24))
+            pointerPath.addLine(to: CGPoint(x: rect.midX + 5.5, y: 24))
+            pointerPath.close()
+            (selected ? accent : UIColor(white: 0.94, alpha: 0.96)).setFill()
+            pointerPath.fill()
+
+            let headColor = selected ? accent : UIColor(white: 0.97, alpha: 0.97)
+            headColor.setFill()
+            UIBezierPath(ovalIn: headRect).fill()
+
+            UIColor.white.withAlphaComponent(selected ? 0.34 : 0.65).setStroke()
+            UIBezierPath(ovalIn: headRect).stroke(lineWidth: 1.2)
+
+            let innerRect = headRect.insetBy(dx: 5, dy: 5)
+            UIColor.black.withAlphaComponent(selected ? 0.12 : 0.06).setFill()
+            UIBezierPath(ovalIn: innerRect).fill()
+
+            let symbolName = selected ? "sparkles" : "building.2.crop.circle"
+            let symbolConfig = UIImage.SymbolConfiguration(pointSize: 12, weight: .bold)
+            let symbol = UIImage(systemName: symbolName, withConfiguration: symbolConfig)?
+                .withTintColor(selected ? .white : UIColor(white: 0.12, alpha: 1), renderingMode: .alwaysOriginal)
+            let symbolRect = CGRect(x: innerRect.midX - 7, y: innerRect.midY - 7, width: 14, height: 14)
+            symbol?.draw(in: symbolRect)
+
+            if selected {
+                UIColor.white.withAlphaComponent(0.32).setStroke()
+                UIBezierPath(ovalIn: headRect.insetBy(dx: -2.5, dy: -2.5)).stroke(lineWidth: 1.4)
+            }
+
+            _ = pinRect
+        }
+
+        cache[key] = image
+        return image
+    }
+
+    static func center(accent: UIColor) -> UIImage {
+        let key = "center-\(accent.cacheKey)"
+        if let cached = cache[key] { return cached }
+
+        let image = render(size: CGSize(width: 36, height: 36)) { rect in
+            UIColor.black.withAlphaComponent(0.32).setFill()
+            UIBezierPath(ovalIn: rect.insetBy(dx: 2, dy: 2)).fill()
+
+            accent.withAlphaComponent(0.95).setStroke()
+            UIBezierPath(ovalIn: rect.insetBy(dx: 5, dy: 5)).stroke(lineWidth: 2.4)
+
+            UIColor.white.withAlphaComponent(0.9).setStroke()
+            UIBezierPath(ovalIn: rect.insetBy(dx: 11, dy: 11)).stroke(lineWidth: 2)
+
+            let ctx = UIGraphicsGetCurrentContext()
+            ctx?.setStrokeColor(UIColor.white.withAlphaComponent(0.85).cgColor)
+            ctx?.setLineWidth(1.5)
+            ctx?.move(to: CGPoint(x: rect.midX, y: 2))
+            ctx?.addLine(to: CGPoint(x: rect.midX, y: 9))
+            ctx?.move(to: CGPoint(x: rect.midX, y: rect.maxY - 2))
+            ctx?.addLine(to: CGPoint(x: rect.midX, y: rect.maxY - 9))
+            ctx?.move(to: CGPoint(x: 2, y: rect.midY))
+            ctx?.addLine(to: CGPoint(x: 9, y: rect.midY))
+            ctx?.move(to: CGPoint(x: rect.maxX - 2, y: rect.midY))
+            ctx?.addLine(to: CGPoint(x: rect.maxX - 9, y: rect.midY))
+            ctx?.strokePath()
+        }
+
+        cache[key] = image
+        return image
+    }
+
+    static func poi(symbol: String, tint: UIColor, accent: UIColor) -> UIImage {
+        let key = "poi-\(symbol)-\(tint.cacheKey)-\(accent.cacheKey)"
+        if let cached = cache[key] { return cached }
+
+        let image = render(size: CGSize(width: 30, height: 38)) { rect in
+            let headRect = CGRect(x: 3, y: 2, width: 24, height: 24)
+
+            UIColor.black.withAlphaComponent(0.28).setFill()
+            UIBezierPath(ovalIn: headRect.insetBy(dx: -1, dy: -1)).fill()
+
+            let pointer = UIBezierPath()
+            pointer.move(to: CGPoint(x: rect.midX, y: 34))
+            pointer.addLine(to: CGPoint(x: rect.midX - 4.6, y: 22))
+            pointer.addLine(to: CGPoint(x: rect.midX + 4.6, y: 22))
+            pointer.close()
+            tint.withAlphaComponent(0.95).setFill()
+            pointer.fill()
+
+            tint.withAlphaComponent(0.96).setFill()
+            UIBezierPath(ovalIn: headRect).fill()
+
+            UIColor.white.withAlphaComponent(0.75).setStroke()
+            UIBezierPath(ovalIn: headRect).stroke(lineWidth: 1)
+
+            let inner = headRect.insetBy(dx: 4.5, dy: 4.5)
+            UIColor.white.withAlphaComponent(0.14).setFill()
+            UIBezierPath(ovalIn: inner).fill()
+
+            let config = UIImage.SymbolConfiguration(pointSize: 10.5, weight: .bold)
+            let symbolImage = UIImage(systemName: symbol, withConfiguration: config)?
+                .withTintColor(.white, renderingMode: .alwaysOriginal)
+            symbolImage?.draw(in: CGRect(x: inner.midX - 6, y: inner.midY - 6, width: 12, height: 12))
+
+            if symbol == "fork.knife" {
+                accent.withAlphaComponent(0.25).setStroke()
+                UIBezierPath(ovalIn: headRect.insetBy(dx: -2, dy: -2)).stroke(lineWidth: 1.2)
+            }
+        }
+
+        cache[key] = image
+        return image
+    }
+
+    static func cluster(count: Int, accent: UIColor) -> UIImage {
+        let key = "cluster-\(min(count, 99))-\(accent.cacheKey)"
+        if let cached = cache[key] { return cached }
+
+        let image = render(size: CGSize(width: 40, height: 40)) { rect in
+            let backRect = rect.insetBy(dx: 7, dy: 7)
+            UIColor.black.withAlphaComponent(0.3).setFill()
+            UIBezierPath(ovalIn: backRect.offsetBy(dx: 2, dy: 2)).fill()
+
+            accent.withAlphaComponent(0.32).setFill()
+            UIBezierPath(ovalIn: backRect.offsetBy(dx: -2, dy: -2)).fill()
+
+            UIColor(white: 0.08, alpha: 0.9).setFill()
+            UIBezierPath(ovalIn: backRect).fill()
+
+            UIColor.white.withAlphaComponent(0.18).setStroke()
+            UIBezierPath(ovalIn: backRect).stroke(lineWidth: 1.2)
+
+            let text = count > 99 ? "99+" : "\(count)"
+            let attrs: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: count > 9 ? 12 : 13, weight: .bold),
+                .foregroundColor: UIColor.white
+            ]
+            let textSize = (text as NSString).size(withAttributes: attrs)
+            let textRect = CGRect(
+                x: rect.midX - textSize.width / 2,
+                y: rect.midY - textSize.height / 2 - 0.5,
+                width: textSize.width,
+                height: textSize.height
+            )
+            (text as NSString).draw(in: textRect, withAttributes: attrs)
+        }
+
+        cache[key] = image
+        return image
+    }
+
+    private static func render(size: CGSize, _ drawing: (CGRect) -> Void) -> UIImage {
+        let format = UIGraphicsImageRendererFormat.default()
+        format.opaque = false
+        return UIGraphicsImageRenderer(size: size, format: format).image { _ in
+            drawing(CGRect(origin: .zero, size: size))
+        }
+    }
+}
+
+private extension UIColor {
+    var cacheKey: String {
+        guard let comps = cgColor.components else { return "0" }
+        let vals = comps.map { Int(($0 * 255).rounded()) }
+        return vals.map(String.init).joined(separator: "-")
+    }
+}
+
+private extension UIBezierPath {
+    func stroke(lineWidth: CGFloat) {
+        self.lineWidth = lineWidth
+        stroke()
+    }
+}
+
+private extension POICategory {
+    var mapIconTint: UIColor {
+        switch self {
+        case .historical:
+            return UIColor(red: 0.82, green: 0.63, blue: 0.34, alpha: 1)
+        case .waterfall:
+            return UIColor(red: 0.18, green: 0.73, blue: 0.98, alpha: 1)
+        case .nature:
+            return UIColor(red: 0.34, green: 0.82, blue: 0.47, alpha: 1)
+        case .food:
+            return UIColor(red: 1.00, green: 0.60, blue: 0.20, alpha: 1)
+        case .museum:
+            return UIColor(red: 0.62, green: 0.67, blue: 0.98, alpha: 1)
         }
     }
 }
