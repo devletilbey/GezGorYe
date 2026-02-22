@@ -17,6 +17,7 @@ from urllib.request import Request, build_opener, HTTPCookieProcessor, HTTPSHand
 
 ROOT = Path(__file__).resolve().parents[1]
 CITIES_JSON = ROOT / 'GezGorYe' / 'Resources' / 'cities.json'
+TATILBUDUR_PRIORITY_FILE = ROOT / 'GezGorYe' / 'Resources' / 'tatilbudur_priorities.json'
 
 UA = (
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
@@ -212,6 +213,23 @@ CITY_ICONIC_PRIORITY_BOOSTS: Dict[str, List[str]] = {
     'Şanlıurfa': ['gobeklitepe', 'balikligol', 'harran', 'halfeti', 'sanliurfa arkeoloji', 'haleplibahce'],
     'Şırnak': ['cizre ulu camii', 'mem u zin', 'finik', 'kasrik bogazi', 'mor yakup'],
 }
+
+def load_tatilbudur_priority_titles() -> Dict[str, List[str]]:
+    if not TATILBUDUR_PRIORITY_FILE.exists():
+        return {}
+    try:
+        data = json.loads(TATILBUDUR_PRIORITY_FILE.read_text(encoding='utf-8'))
+        if isinstance(data, dict):
+            cleaned: Dict[str, List[str]] = {}
+            for city, items in data.items():
+                if isinstance(city, str) and isinstance(items, list):
+                    cleaned[city] = [str(x).strip() for x in items if str(x).strip()]
+            return cleaned
+    except Exception:
+        pass
+    return {}
+
+TATILBUDUR_PRIORITY_TITLES = load_tatilbudur_priority_titles()
 
 POI_CATEGORY_HINTS = {
     'museum': ['müze', 'muze', 'müzeleri', 'arkeoloji müzeleri', 'müzesi'],
@@ -466,7 +484,8 @@ def fetch_culture_category_map(client: HttpClient) -> Dict[str, str]:
 def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[str, str]) -> List[CandidatePOI]:
     out: List[CandidatePOI] = []
     city_fold = tr_fold(city_name)
-    city_manual_phrases = [low_tr(x) for x in CITY_ICONIC_PRIORITY_BOOSTS.get(city_name, [])]
+    priority_titles = TATILBUDUR_PRIORITY_TITLES.get(city_name) or CITY_ICONIC_PRIORITY_BOOSTS.get(city_name, [])
+    city_manual_phrases = [low_tr(x) for x in priority_titles]
     for x in items:
         try:
             lat = float(x.get('latitude'))
@@ -671,7 +690,8 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
     selected: List[CandidatePOI] = []
     selected_names = set()
     subtype_counts: Dict[str, int] = {}
-    city_manual_phrases = [low_tr(x) for x in CITY_ICONIC_PRIORITY_BOOSTS.get(city_name, [])]
+    priority_titles = TATILBUDUR_PRIORITY_TITLES.get(city_name) or CITY_ICONIC_PRIORITY_BOOSTS.get(city_name, [])
+    city_manual_phrases = [low_tr(x) for x in priority_titles]
 
     def manual_rank(c: CandidatePOI) -> int:
         name_cat = low_tr(c.name + ' ' + c.source_category_name)
