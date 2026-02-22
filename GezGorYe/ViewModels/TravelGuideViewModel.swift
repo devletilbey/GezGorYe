@@ -146,6 +146,16 @@ final class TravelGuideViewModel: ObservableObject {
             return false
         }
 
+        let localityMarkers = ["koyu", "köyü", "mahallesi", "merkez mahallesi", "mezra"]
+        let religiousMarkers = ["cami", "camii", "kilise", "manastir", "turbe"]
+        let localityWhitelist = ["cumalikizik", "vakifli", "yoruk koyu"]
+        let hasLocality = localityMarkers.contains(where: { combined.contains($0) })
+        let hasReligious = religiousMarkers.contains(where: { combined.contains($0) })
+        let localityWhitelisted = localityWhitelist.contains(where: { combined.contains($0) })
+        if hasLocality && hasReligious && !localityWhitelisted {
+            return false
+        }
+
         if cityName == "istanbul" && name.contains("kopru") {
             let historicBridgeWhitelist = [
                 "valens kemeri", "bizans su kemeri", "galata koprusu"

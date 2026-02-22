@@ -50,6 +50,18 @@ INFRA_NEGATIVE_KEYWORDS = [
     'viyadug', 'çevre yolu', 'cevre yolu', 'kavşak', 'kavsak', 'karayolu', 'yol',
 ]
 
+LOW_TOURISM_LOCALITY_KEYWORDS = [
+    'mahallesi', 'merkez mahallesi', 'köyü', 'koyu', 'mezra', 'mevkii'
+]
+
+RELIGIOUS_STRUCTURE_KEYWORDS = [
+    'cami', 'camii', 'kilise', 'manastır', 'manastir', 'türbe', 'turbe'
+]
+
+LOCALITY_WORTHY_WHITELIST = [
+    'cumalikizik', 'cumalıkızık', 'vakifli', 'vakıflı', 'yoruk koyu', 'yörük köyü'
+]
+
 POI_STRONG_POSITIVE = {
     'antik kent': 8,
     'ören yeri': 7,
@@ -383,6 +395,13 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
         if negative_hits and strong_positive_hits < 6:
             continue
 
+        # Reject low-value locality-level religious stops (village/neighborhood mosques etc.)
+        has_locality_marker = any(k in text for k in LOW_TOURISM_LOCALITY_KEYWORDS)
+        has_religious_marker = any(k in text for k in RELIGIOUS_STRUCTURE_KEYWORDS)
+        locality_whitelisted = any(k in text for k in LOCALITY_WORTHY_WHITELIST)
+        if has_locality_marker and has_religious_marker and not locality_whitelisted:
+            continue
+
         # Generic city-level placeholders are low quality for POI list.
         if lf_name in {city_fold, city_fold + 'merkez', city_fold + 'ilmerkezi'}:
             continue
@@ -402,6 +421,8 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
             score += 2
         if 'şelale' in text or 'selale' in text:
             score += 2
+        if has_locality_marker and not locality_whitelisted:
+            score -= 2.5
 
         if any(k in text for k in POI_CATEGORY_HINTS['waterfall']):
             app_category = 'waterfall'
@@ -493,14 +514,47 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
 
     selected: List[CandidatePOI] = []
     selected_names = set()
+    subtype_counts: Dict[str, int] = {}
+
+    def subtype_key(c: CandidatePOI) -> str:
+        t = low_tr(c.name + ' ' + c.source_category_name)
+        if 'cami' in t:
+            return 'cami'
+        if 'kilise' in t:
+            return 'kilise'
+        if 'manastir' in t or 'manastır' in t:
+            return 'manastir'
+        if 'turbe' in t or 'türbe' in t:
+            return 'turbe'
+        if 'medrese' in t:
+            return 'medrese'
+        if 'muze' in t or 'müze' in t:
+            return 'muze'
+        if 'kale' in t or 'hisar' in t:
+            return 'kale'
+        return 'other'
+
+    def subtype_limit(c: CandidatePOI) -> int:
+        key = subtype_key(c)
+        if key == 'cami':
+            return 3
+        if key in {'turbe', 'kilise', 'manastir'}:
+            return 2
+        if key == 'medrese':
+            return 3
+        return 99
 
     # Ensure core diversity where possible.
     for cat in ('historical', 'museum', 'nature', 'waterfall'):
         if buckets.get(cat):
             top = buckets[cat][0]
             if top.name not in selected_names:
+                sk = subtype_key(top)
+                if subtype_counts.get(sk, 0) >= subtype_limit(top):
+                    continue
                 selected.append(top)
                 selected_names.add(top.name)
+                subtype_counts[sk] = subtype_counts.get(sk, 0) + 1
 
     for c in cands:
         if len(selected) >= target:
@@ -514,14 +568,23 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
         if cat_count >= max_cat and len(buckets.get(c.app_category, [])) > max_cat:
             continue
 
+        sk = subtype_key(c)
+        if subtype_counts.get(sk, 0) >= subtype_limit(c) and len(cands) > target + 3:
+            continue
+
         selected.append(c)
         selected_names.add(c.name)
+        subtype_counts[sk] = subtype_counts.get(sk, 0) + 1
 
     if len(selected) < min(6, len(cands)):
         for c in cands:
             if c.name not in selected_names:
+                sk = subtype_key(c)
+                if subtype_counts.get(sk, 0) >= subtype_limit(c) and len(cands) > 8:
+                    continue
                 selected.append(c)
                 selected_names.add(c.name)
+                subtype_counts[sk] = subtype_counts.get(sk, 0) + 1
             if len(selected) >= min(6, len(cands)):
                 break
 
