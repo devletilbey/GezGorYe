@@ -7,7 +7,7 @@ final class TravelGuideViewModel: ObservableObject {
     @Published var cities: [City] = []
     @Published var selectedCity: City?
     @Published var selectedCategories = Set(POICategory.allCases)
-    @Published var cameraPosition: MapCameraPosition
+    @Published var cameraRegion: MKCoordinateRegion
     @Published var loadingError: String?
     @Published private(set) var filteredPOIs: [POI] = []
     @Published private(set) var routePlan: RoutePlan = RoutePlan(orderedStops: [], totalDistanceKm: 0, totalMinutes: 0)
@@ -23,7 +23,7 @@ final class TravelGuideViewModel: ObservableObject {
         self.repository = repository
         self.optimizer = optimizer
 
-        self.cameraPosition = .region(Self.turkeyRegion)
+        self.cameraRegion = Self.turkeyRegion
         loadCities()
     }
 
@@ -34,11 +34,9 @@ final class TravelGuideViewModel: ObservableObject {
     func selectCity(_ city: City) {
         selectedCity = city
         selectedCategories = Set(POICategory.allCases)
-        cameraPosition = .region(
-            MKCoordinateRegion(
-                center: city.location,
-                span: MKCoordinateSpan(latitudeDelta: 0.45, longitudeDelta: 0.45)
-            )
+        cameraRegion = MKCoordinateRegion(
+            center: city.location,
+            span: MKCoordinateSpan(latitudeDelta: 0.45, longitudeDelta: 0.45)
         )
         updateDerivedData()
     }
@@ -46,7 +44,7 @@ final class TravelGuideViewModel: ObservableObject {
     func resetToTurkey() {
         selectedCity = nil
         selectedCategories = Set(POICategory.allCases)
-        cameraPosition = .region(Self.turkeyRegion)
+        cameraRegion = Self.turkeyRegion
         updateDerivedData()
     }
 
