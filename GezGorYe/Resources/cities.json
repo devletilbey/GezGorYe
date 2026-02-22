@@ -209,26 +209,6 @@
         "recommendedVisitMinutes": 75
       },
       {
-        "name": "Nissibi Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 37.898889,
-          "longitude": 38.974444
-        },
-        "shortDescription": "Fırat Nehri üzerindeki gergin eğik askılı bir köprü",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Atatürk Baraj Gölü",
-        "category": "nature",
-        "coordinate": {
-          "latitude": 37.5738,
-          "longitude": 38.591
-        },
-        "shortDescription": "Türkiye'de bir baraj gölü",
-        "recommendedVisitMinutes": 105
-      },
-      {
         "name": "Perre",
         "category": "historical",
         "coordinate": {
@@ -2650,16 +2630,6 @@
         "recommendedVisitMinutes": 80
       },
       {
-        "name": "Dicle Tüneli",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 38.529653,
-          "longitude": 40.547447
-        },
-        "shortDescription": "cave in Turkey",
-        "recommendedVisitMinutes": 80
-      },
-      {
         "name": "Behram Paşa Camii",
         "category": "historical",
         "coordinate": {
@@ -2974,16 +2944,6 @@
         "recommendedVisitMinutes": 80
       },
       {
-        "name": "Keban Baraj Gölü",
-        "category": "nature",
-        "coordinate": {
-          "latitude": 38.649167,
-          "longitude": 39.488056
-        },
-        "shortDescription": "Türkiye'de bir baraj gölü",
-        "recommendedVisitMinutes": 105
-      },
-      {
         "name": "Ağın Köprüsü",
         "category": "historical",
         "coordinate": {
@@ -3002,16 +2962,6 @@
         },
         "shortDescription": "Elazığ merkezde müze",
         "recommendedVisitMinutes": 75
-      },
-      {
-        "name": "Yeni Kömürhan Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 38.44065,
-          "longitude": 38.8188
-        },
-        "shortDescription": "bridge in Elazığ, Turkey",
-        "recommendedVisitMinutes": 80
       }
     ]
   },
@@ -3050,16 +3000,6 @@
         },
         "shortDescription": "Üzümlü'de antik kent ve höyük",
         "recommendedVisitMinutes": 95
-      },
-      {
-        "name": "Keban Baraj Gölü",
-        "category": "nature",
-        "coordinate": {
-          "latitude": 38.649167,
-          "longitude": 39.488056
-        },
-        "shortDescription": "Türkiye'de bir baraj gölü",
-        "recommendedVisitMinutes": 120
       },
       {
         "name": "Ali Demirsoy Doğal Tarih Müzesi",
@@ -3638,66 +3578,6 @@
         "recommendedVisitMinutes": 95
       },
       {
-        "name": "Harşit Çayı",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.387443,
-          "longitude": 39.692219
-        },
-        "shortDescription": "Türkiye'de akarsu",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Zigana Tüneli",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.689167,
-          "longitude": 39.444722
-        },
-        "shortDescription": "karayolu tüneli",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Torul Barajı",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.635278,
-          "longitude": 39.231389
-        },
-        "shortDescription": "Gümüşhane'de baraj",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Kürtün Barajı ve Hidroelektrik Santrali",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.68178,
-          "longitude": 39.12786
-        },
-        "shortDescription": "Gümüşhane'de baraj",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Mastra altın madeni",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.501,
-          "longitude": 39.387
-        },
-        "shortDescription": "gold mine in Turkey",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Aladereçam Barajı",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.63843,
-          "longitude": 38.79988
-        },
-        "shortDescription": "Giresun' da bir baraj",
-        "recommendedVisitMinutes": 80
-      },
-      {
         "name": "Tomara Şelalesi",
         "category": "waterfall",
         "coordinate": {
@@ -4155,16 +4035,6 @@
     ],
     "pointsOfInterest": [
       {
-        "name": "İstanbul",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 41.01,
-          "longitude": 28.960278
-        },
-        "shortDescription": "Türkiye'nin ve Avrupa'nın en kalabalık şehri",
-        "recommendedVisitMinutes": 95
-      },
-      {
         "name": "Ayasofya",
         "category": "museum",
         "coordinate": {
@@ -4215,16 +4085,6 @@
         "recommendedVisitMinutes": 80
       },
       {
-        "name": "Haliç",
-        "category": "nature",
-        "coordinate": {
-          "latitude": 41.029167,
-          "longitude": 28.961111
-        },
-        "shortDescription": "Boğaziçi girişindeki Tarihî yarımada ve Beyoğlu platolarını birbirinden ayıran deniz girintisi",
-        "recommendedVisitMinutes": 105
-      },
-      {
         "name": "Galata Kulesi",
         "category": "museum",
         "coordinate": {
@@ -4233,26 +4093,6 @@
         },
         "shortDescription": "İstanbul'un Beyoğlu ilçesinde tarihi kule",
         "recommendedVisitMinutes": 75
-      },
-      {
-        "name": "15 Temmuz Şehitler Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 41.045556,
-          "longitude": 29.034028
-        },
-        "shortDescription": "İstanbul Boğazı'nda yer alan ve Asya'yı Avrupa'ya bağlayan birinci köprü",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Yavuz Sultan Selim Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 41.203056,
-          "longitude": 29.111667
-        },
-        "shortDescription": "İstanbul Boğazı'nda yer alan ve Asya'yı Avrupa'ya bağlayan üçüncü köprü",
-        "recommendedVisitMinutes": 80
       }
     ]
   },
@@ -4479,16 +4319,6 @@
         },
         "shortDescription": "Turkish museum of miniature figures",
         "recommendedVisitMinutes": 75
-      },
-      {
-        "name": "Menzelet Baraj Gölü",
-        "category": "nature",
-        "coordinate": {
-          "latitude": 37.71099,
-          "longitude": 36.87492
-        },
-        "shortDescription": "Kahramanmaraş'ta baraj gölü",
-        "recommendedVisitMinutes": 105
       },
       {
         "name": "Germanicia",
@@ -4802,16 +4632,6 @@
         },
         "shortDescription": "11. yüzyıla ait terk edilmiş bir katedral",
         "recommendedVisitMinutes": 95
-      },
-      {
-        "name": "Arpaçay Baraj Gölü",
-        "category": "nature",
-        "coordinate": {
-          "latitude": 40.60512,
-          "longitude": 43.69242
-        },
-        "shortDescription": "Ermenistan ve Türkiye'de bir göl",
-        "recommendedVisitMinutes": 105
       },
       {
         "name": "Kümbet Camii",
@@ -5240,16 +5060,6 @@
       "İzmit Pişmaniyesi"
     ],
     "pointsOfInterest": [
-      {
-        "name": "Osmangazi Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.755,
-          "longitude": 29.515556
-        },
-        "shortDescription": "Yalova ile Kocaeli arasında bir asma köprü",
-        "recommendedVisitMinutes": 95
-      },
       {
         "name": "Sapanca Gölü",
         "category": "nature",
@@ -5992,16 +5802,6 @@
           "longitude": 38.301944
         },
         "shortDescription": "Yeşilyurt'ta (Malatya) kilise",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Yeni Kömürhan Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 38.44065,
-          "longitude": 38.8188
-        },
-        "shortDescription": "bridge in Elazığ, Turkey",
         "recommendedVisitMinutes": 80
       },
       {
@@ -7565,16 +7365,6 @@
         "recommendedVisitMinutes": 95
       },
       {
-        "name": "Beğendik Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 37.964722,
-          "longitude": 42.649167
-        },
-        "shortDescription": "Pervari, Türkiye'de bir köprü",
-        "recommendedVisitMinutes": 95
-      },
-      {
         "name": "Siirt Ulu Camii",
         "category": "historical",
         "coordinate": {
@@ -8278,16 +8068,6 @@
         "recommendedVisitMinutes": 95
       },
       {
-        "name": "Keban Baraj Gölü",
-        "category": "nature",
-        "coordinate": {
-          "latitude": 38.649167,
-          "longitude": 39.488056
-        },
-        "shortDescription": "Türkiye'de bir baraj gölü",
-        "recommendedVisitMinutes": 120
-      },
-      {
         "name": "Surbehan Kilisesi",
         "category": "historical",
         "coordinate": {
@@ -8885,16 +8665,6 @@
         "recommendedVisitMinutes": 95
       },
       {
-        "name": "1915 Çanakkale Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.339889,
-          "longitude": 26.636694
-        },
-        "shortDescription": "Türkiye'de Çanakkale Boğazı üzerinde bulunan asma köprü",
-        "recommendedVisitMinutes": 95
-      },
-      {
         "name": "Abidos",
         "category": "historical",
         "coordinate": {
@@ -9053,16 +8823,6 @@
         "recommendedVisitMinutes": 80
       },
       {
-        "name": "Güldürcek Barajı",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.56885,
-          "longitude": 32.95041
-        },
-        "shortDescription": "Çankırı'da baraj",
-        "recommendedVisitMinutes": 80
-      },
-      {
         "name": "1951 Çankırı Depremi",
         "category": "historical",
         "coordinate": {
@@ -9070,16 +8830,6 @@
           "longitude": 33.4
         },
         "shortDescription": "6.7-magnitude earthquake that struck Çankırı in north-central Turkey on August 13, 1951",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Akhasan Barajı",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 40.74212,
-          "longitude": 32.7961
-        },
-        "shortDescription": "Çankırı'da baraj",
         "recommendedVisitMinutes": 80
       },
       {
@@ -9336,16 +9086,6 @@
           "longitude": 38.906111
         },
         "shortDescription": "Eyyübiye'de höyük",
-        "recommendedVisitMinutes": 80
-      },
-      {
-        "name": "Nissibi Köprüsü",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 37.898889,
-          "longitude": 38.974444
-        },
-        "shortDescription": "Fırat Nehri üzerindeki gergin eğik askılı bir köprü",
         "recommendedVisitMinutes": 80
       }
     ]

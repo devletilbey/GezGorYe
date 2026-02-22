@@ -79,7 +79,10 @@ final class TravelGuideViewModel: ObservableObject {
             return
         }
 
-        let pois = city.pointsOfInterest.filter { selectedCategories.contains($0.category) }
+        let pois = city.pointsOfInterest.filter {
+            selectedCategories.contains($0.category) &&
+                Self.isTravelRelevant($0, in: city)
+        }
         filteredPOIs = pois
 
         let optimized = optimizer.buildFastestPlan(start: city.center, pois: pois)
@@ -90,6 +93,52 @@ final class TravelGuideViewModel: ObservableObject {
     }
 
     private static let emptyRoutePlan = RoutePlan(orderedStops: [], totalDistanceKm: 0, totalMinutes: 0)
+
+    private static func isTravelRelevant(_ poi: POI, in city: City) -> Bool {
+        let name = poi.name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let description = poi.shortDescription.lowercased()
+        let combined = "\(name) \(description)"
+        let cityName = city.name.lowercased()
+
+        if name == cityName {
+            return false
+        }
+
+        let exactBlacklist: Set<String> = [
+            "haliç",
+            "15 temmuz şehitler köprüsü",
+            "yavuz sultan selim köprüsü",
+            "osmangazi köprüsü",
+            "1915 çanakkale köprüsü",
+            "nissibi köprüsü",
+            "yeni kömürhan köprüsü",
+            "beğendik köprüsü"
+        ]
+        if exactBlacklist.contains(name) {
+            return false
+        }
+
+        let disallowedPatterns = [
+            "baraj",
+            "hidroelektrik santrali",
+            " karayolu tüneli",
+            " tüneli",
+            " tuneli",
+            "gold mine",
+            " altın madeni",
+            " türkiye'de akarsu",
+            "river in",
+            " birinci köprü",
+            " üçüncü köprü",
+            "asya'yı avrupa'ya bağlayan",
+            "gergin eğik askılı"
+        ]
+        if disallowedPatterns.contains(where: { combined.contains($0) }) {
+            return false
+        }
+
+        return true
+    }
 
     private static let turkeyRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 39.1, longitude: 35.2),
