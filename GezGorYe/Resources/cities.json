@@ -11,11 +11,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Adana Kebap",
-      "Bici Bici",
-      "Şırdan",
-      "Analı Kızlı",
-      "Ciğer"
+      "Adana İçli Köfte",
+      "Adana Kebabı",
+      "Adana Analı Kızlı",
+      "Adana Şırdan",
+      "Adana Karakuş Tatlısı",
+      "Adana Taş Kadayıfı",
+      "Adana Halka Tatlısı",
+      "Adana Şalgamı",
+      "Ceyhan Zeytinyağı",
+      "Adana Kol Böreği",
+      "Adana Aşlama",
+      "Adana Bici Bici"
     ],
     "pointsOfInterest": [
       {
@@ -132,11 +139,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Adıyaman Kebabı",
-      "Adıyaman Pidesi",
-      "Adıyaman Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Adıyaman Etsiz Çiğ Köfte",
+      "Kahta Bulgur Pilavı",
+      "Kahta Bademli İrmik Helvası",
+      "Adıyaman Besni Üzümü",
+      "Kahta Narı",
+      "Adıyaman Tut Dutu",
+      "Kahta Bademi"
     ],
     "pointsOfInterest": [
       {
@@ -253,11 +262,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Afyonkarahisar Kebabı",
-      "Afyonkarahisar Pidesi",
-      "Afyonkarahisar Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Afyonkarahisar Göce Köftesi / Afyon Göce Köftesi",
+      "Afyonkarahisar Çullama Köfte",
+      "İscehisar Mermer Kebabı",
+      "Bolvadin Mantısı",
+      "Afyon Kebabı",
+      "Emirdağ Dolgulu Köftesi",
+      "Afyonkarahisar Ak Pide / Afyonkarahisar Tırnak Pidesi",
+      "Afyonkarahisar Haşhaşlı Katmer",
+      "Afyonkarahisar Hurma Baklavası / Afyon Hurma Baklavası",
+      "Sandıklı Haşhaşlı Tahinli Pidesi",
+      "Emirdağ Yumurtalı Pidesi",
+      "Afyon Kaymaklı Ekmek Kadayıfı"
     ],
     "pointsOfInterest": [
       {
@@ -374,11 +390,17 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Aksaray Kebabı",
-      "Aksaray Pidesi",
-      "Aksaray Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Aksaray Tulum Kebabı",
+      "Aksaray Şerbetli Pidesi",
+      "Aksaray Köpük Helva",
+      "Aksaray Tahinlisi",
+      "Aksaray İnceelek Tatlısı",
+      "Aksaray Un Kurabiyesi / Aksaray Asker Kurabiyesi",
+      "Aksaray Şeker Böreği",
+      "Gelveri Ekmeği",
+      "Aksaray Çerezlik Ayçekirdeği",
+      "Aksaray Kabak Çekirdeği",
+      "Eşmekaya Yoğurdu"
     ],
     "pointsOfInterest": [
       {
@@ -495,11 +517,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Amasya Kebabı",
-      "Amasya Pidesi",
-      "Amasya Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Amasya Çatal Çorbası",
+      "Amasya Sıkma Tarhanası",
+      "Amasya Baklalı Dolması",
+      "Amasya Toyga Çorbası",
+      "Amasya Ayva Gallesi",
+      "Amasya Keşkeği",
+      "Amasya Cevizli Ballı Baklavası",
+      "Amasya Unutma Beni Tatlısı",
+      "Amasya Kaypağı/Amasya Piruhisi",
+      "Amasya Yanuç",
+      "Amasya Yağlısı",
+      "Burmalı Amasya Çöreği"
     ],
     "pointsOfInterest": [
       {
@@ -616,11 +645,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Ankara Kebabı",
-      "Ankara Pidesi",
-      "Ankara Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Akyurt Soğuk Çorbası",
+      "Akyurt Toyga Aşı / Akyurt Toyga Çorbası",
+      "Akyurt Tutmaç Aşı /Çorbası",
+      "Beypazarı Dolması / Beypazarı Yaprak Sarması",
+      "Akyurt Fıtı Çorbası",
+      "Ankara Döneri",
+      "Şereflikoçhisar Tahinli Pidesi",
+      "Ankara Erkeç Pastırması",
+      "Beypazarı Höşmerim Tatlısı",
+      "Çamlıdere Höşmerim Tatlısı",
+      "Elmadağ Tandır Ekmeği",
+      "Ankara Simidi"
     ],
     "pointsOfInterest": [
       {
@@ -737,11 +773,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Antalya Kebabı",
-      "Antalya Pidesi",
-      "Antalya Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Antalya Paça Çorbası",
+      "Alanya Gülüklü (Hülüklü) Çorba",
+      "Antalya Topak Kızartması",
+      "Antalya Piyazı",
+      "Antalya Kabak Tatlısı",
+      "Alanya Fıstıklı Limonata",
+      "Antalya Bergamot Kabuğu Reçeli",
+      "Antalya Serpme Böreği",
+      "Antalya Turunç Kabuğu Reçeli",
+      "Antalya Tavşan Yüreği Zeytini",
+      "Kaş Margaz Üzümü",
+      "Gazipaşa Çekirdeksiz Narı"
     ],
     "pointsOfInterest": [
       {
@@ -858,11 +901,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Ardahan Kebabı",
-      "Ardahan Pidesi",
-      "Ardahan Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Ardahan Çiçek Balı",
+      "Hanak Tel Peyniri",
+      "Ardahan Kaz Eti",
+      "Posof Fasulyesi",
+      "Posof Elması / Badele Elması",
+      "Ardahan Kebabı"
     ],
     "pointsOfInterest": [
       {
@@ -979,11 +1023,14 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Artvin Kebabı",
-      "Artvin Pidesi",
-      "Artvin Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Puçuko",
+      "Hopa Hamsili Ekmeği",
+      "Arhavi Kestane Balı",
+      "Hatila Balı",
+      "Arhavi Termonisi",
+      "Şavşat Ketesi",
+      "Hopa Laz Böreği",
+      "Borçka Demir Elması"
     ],
     "pointsOfInterest": [
       {
@@ -1100,11 +1147,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Aydın Kebabı",
-      "Aydın Pidesi",
-      "Aydın Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Olukbaşı Oğlak Çevirme Kebabı",
+      "Çine Köftesi",
+      "Söke Kulak Çorbası",
+      "Aydın Yuvarlaması",
+      "Dedebağ Keşkeği / Karacasu Keşkeği",
+      "Germencik Ekşili Tavuk",
+      "Bozdoğan Pidesi",
+      "Söke Tahinli Pidesi",
+      "Yenipazar Pidesi",
+      "Söke Pidesi",
+      "Karacasu Pidesi",
+      "Nazilli Pidesi"
     ],
     "pointsOfInterest": [
       {
@@ -1221,11 +1275,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Ağrı Kebabı",
-      "Ağrı Pidesi",
-      "Ağrı Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Doğubayazıt Abdigör Köftesi",
+      "Ağrı Haşıl Yemeği",
+      "Ağrı Yaprak Döneri",
+      "Ağrı Tulum Peyniri",
+      "Ağrı Geven Balı",
+      "Doğubayazıt Aşure Tatlısı"
     ],
     "pointsOfInterest": [
       {
@@ -1302,11 +1357,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Balıkesir Kebabı",
-      "Balıkesir Pidesi",
-      "Balıkesir Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Balıkesir Etli Çorba",
+      "Balıkesir Düğün Çorbası",
+      "Balıkesir Göbel Kuzu Kokoreci / Balıkesir Kuzu Kokoreci",
+      "Ayvalık Karadiken",
+      "Susurluk Tostu",
+      "Balıkesir Kaymaklısı",
+      "Balıkesir Höşmerim Tatlısı",
+      "Balıkesir Manda Kaymağı",
+      "Balıkesir Kuzu Eti",
+      "Yağlılar Basma Helvası",
+      "Ayvalık Lor Tatlısı",
+      "Erdek Kapıdağ Zeytinyağı"
     ],
     "pointsOfInterest": [
       {
@@ -1423,11 +1485,17 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Bartın Kebabı",
-      "Bartın Pidesi",
-      "Bartın Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Bartın Pirinçli Mantısı",
+      "Bartın Yumurtalı Isput Yemeği",
+      "Bartın Beyaz Baklavası",
+      "Bartın İncir Dondurma Tatlısı / Bartın İncir Donduması",
+      "Bartın Şapşap Köftesi",
+      "Bartın Ağda Tatlısı",
+      "Bartın Kabak Burma Tatlısı / Bartın Kabak Burması",
+      "Bartın Tatlı Böreği",
+      "Bartın Ramazan Simidi",
+      "Bartın Gözlemesi",
+      "Bartın Çöven Ekmeği"
     ],
     "pointsOfInterest": [
       {
@@ -1514,11 +1582,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Batman Kebabı",
-      "Batman Pidesi",
-      "Batman Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Batman Piçik Yemeği",
+      "Sason Balı",
+      "Batman Şam Böreği",
+      "Gercüş Mezrune Üzümü",
+      "Hasankeyf Mehina Sarımsağı",
+      "Sason Çileği",
+      "Kozluk Domatesi"
     ],
     "pointsOfInterest": [
       {
@@ -1595,11 +1665,17 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Bayburt Kebabı",
-      "Bayburt Pidesi",
-      "Bayburt Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Bayburt Yalancı Dolma",
+      "Bayburt Kavut Çorbası",
+      "Bayburt Lor Dolması",
+      "Bayburt Ekşi Lahana",
+      "Bayburt Kara Pancar Yemeği",
+      "Bayburt Tatlı Çorba",
+      "Bayburt Balı",
+      "Bayburt Süt Böreği",
+      "Bayburt Ketesi",
+      "Aydıntepe Şeker Fasulyesi",
+      "Bayburt Tarhunu"
     ],
     "pointsOfInterest": [
       {
@@ -1676,11 +1752,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Bilecik Kebabı",
-      "Bilecik Pidesi",
-      "Bilecik Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Bilecik Bıldırcın Kebabı",
+      "Bilecik Fırın Kebabı (Bilecik Fırın Eti)",
+      "Bozüyük Mercimekli Mantısı",
+      "Bilecik Ekşili Kesme Çorba",
+      "Bilecik Kapaması",
+      "Bilecik Papaz Yahnisi",
+      "Bilecik Nohutlu Mantı",
+      "Bilecik Pazaryeri Helvası",
+      "Bilecik Şerbetçiotu",
+      "Osmaneli Ayva Lokumu",
+      "Osmaneli Karpuzu",
+      "Çukurören Biberi"
     ],
     "pointsOfInterest": [
       {
@@ -1757,11 +1840,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Bingöl Kebabı",
-      "Bingöl Pidesi",
-      "Bingöl Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Bingöl Çobantaşı Kavurması",
+      "Bingöl Balı",
+      "Sivan Dut Pekmezi",
+      "Yedisu Horoz Kuru Fasulyesi",
+      "Guldar Domatesi",
+      "Bingöl Kebabı"
     ],
     "pointsOfInterest": [
       {
@@ -1838,11 +1922,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Bitlis Kebabı",
-      "Bitlis Pidesi",
-      "Bitlis Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Bitlis İçli Köftesi",
+      "Bitlis Büryan Kebabı",
+      "Bitlis Avşor Çorbası",
+      "Bitlis Ciğer Taplaması",
+      "Bitlis Katıklı Dolma",
+      "Bitlis Çorti Taplaması",
+      "Bitlis Balı"
     ],
     "pointsOfInterest": [
       {
@@ -1959,11 +2045,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Mengen Pilavı",
-      "Abant Kebabı",
-      "Ovmaç Çorbası",
-      "Kedi Batmaz",
-      "Pişmaniye"
+      "Bolu Kızılcık Tarhanası",
+      "Mengen Kaldırık Dolması",
+      "Mengen Höşmerimi",
+      "Mengen Kedibatmaz",
+      "Bolu Göynük Uğut Tatlısı",
+      "Mudurnu Bal Kabaklı Gözlemesi",
+      "Gerede Şakşak Helvası",
+      "Göynük Dik Börek/Göynük Oklava Tatlısı",
+      "Göynük Kabaklı Yufka Tatlısı",
+      "Mudurnu Basma Helva",
+      "Bolu Bal Kabağı",
+      "Mengen Peyniri"
     ],
     "pointsOfInterest": [
       {
@@ -2080,11 +2173,16 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Burdur Kebabı",
-      "Burdur Pidesi",
-      "Burdur Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Burdur Şiş Köftesi",
+      "Gölhisar Kavurması",
+      "Burdur Kabak Helvası",
+      "Karamanlı Cevizi",
+      "Burdur Haşhaş Helvası",
+      "Karamanlı Rezenesi",
+      "Tefenni Rezenesi",
+      "Burdur Ceviz Ezmesi",
+      "Karamanlı Kişnişi",
+      "Melli İnciri"
     ],
     "pointsOfInterest": [
       {
@@ -2201,11 +2299,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Bursa Kebabı",
-      "Bursa Pidesi",
-      "Bursa Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Bursa Döner Kebabı",
+      "Bursa Pideli Köfte",
+      "İnegöl Köfte",
+      "Bursa Tahinli Pide",
+      "Bursa Cevizli Lokum",
+      "İnegöl Piyazı",
+      "Zeyniler Hınkalı",
+      "İnegöl Büryanı / İnegöl Mişörizi",
+      "Bursa Süt Helvası",
+      "İnegöl Sütlü Kadayıfı",
+      "Kemalpaşa Tatlısı / Mustafakemalpaşa Peynir Tatlısı / Mustafakemalpaşa Tatlısı",
+      "Bursa Üzüm Şırası"
     ],
     "pointsOfInterest": [
       {
@@ -2322,11 +2427,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Denizli Kebabı",
-      "Denizli Pidesi",
-      "Denizli Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Tavas Baklavası",
+      "Babadağ Kekik Balı",
+      "Denizli Çalkarası Üzümü/Denizli Çalkarası",
+      "Honaz Kirazı",
+      "Çameli Fasulyesi",
+      "Tavas Yanık Koyun Yoğurdu",
+      "Denizli Kekiği",
+      "İsabey Çekirdeksiz Üzümü",
+      "Denizli Leblebisi",
+      "Acıpayam Kavunu",
+      "Buldan Kestanesi",
+      "Kale Biberi"
     ],
     "pointsOfInterest": [
       {
@@ -2443,11 +2555,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Diyarbakır Kebabı",
-      "Diyarbakır Pidesi",
-      "Diyarbakır Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Diyarbakır Lepik Köftesi",
+      "Diyarbakır Ayvalı Köfte",
+      "Diyarbakır Ciğer Kebabı",
+      "Diyarbakır Kemikli Kebabı",
+      "Diyarbakır Patlıcanlı Kazan Kebabı",
+      "Diyarbakır Perdeli Ciğer Kebabı",
+      "Diyarbakır Kağırdaklı Ekmek / Diyarbakır Kizirikli Ekmek",
+      "Diyarbakır Cimili Tatlısı",
+      "Diyarbakır Armut Tatlısı",
+      "Diyarbakır Burma Kadayıfı",
+      "Diyarbakır Örgü Peyniri",
+      "Diyarbakır Paşa Lavaşı"
     ],
     "pointsOfInterest": [
       {
@@ -2564,11 +2683,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Düzce Kebabı",
-      "Düzce Pidesi",
-      "Düzce Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Düzce Köftesi",
+      "Yufkalı Konuralp Pilavı",
+      "Akçakoca Ekşilisi",
+      "Akçakoca Mancarlı Pidesi",
+      "Düzce Fındıklı Tahin Helvası",
+      "Düzce Kestane Balı",
+      "Akçakoca Melengücceği Tatlısı",
+      "Düzce Şeker Kamışı Pekmezi",
+      "Düzce Şırası",
+      "Düzce Kestanesi",
+      "Düzce Kestane Kabağı",
+      "Düzce Acıkası"
     ],
     "pointsOfInterest": [
       {
@@ -2645,11 +2771,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Edirne Kebabı",
-      "Edirne Pidesi",
-      "Edirne Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Uzunköprü Köftesi",
+      "Edirne Ciğer Sarma",
+      "Edirne Tava Ciğeri",
+      "Keşan Satır Et",
+      "Deva-i Misk Helvası",
+      "Edirne Beyaz Peyniri",
+      "Keşan Korudağ Çiçek Balı",
+      "Çeribaşı Kirazı",
+      "Keşan Mahmutköy Kuru Fasulyesi",
+      "Meriç Yer Fıstığı",
+      "Edirne Badem Ezmesi",
+      "Meriç Kara Kavunu"
     ],
     "pointsOfInterest": [
       {
@@ -2766,11 +2899,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Elazığ Kebabı",
-      "Elazığ Pidesi",
-      "Elazığ Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Elazığ Sırın Yemeği",
+      "Palu Tava",
+      "Elazığ Taş Ekmeği Tatlısı",
+      "Elazığ Geven Balı",
+      "Elazığ Tahannebi Üzümü",
+      "Elazığ Boğazkere Üzümü",
+      "Elazığ Çedene Kahvesi",
+      "Elazığ Öküzgözü Üzümü",
+      "Elazığ Orciği",
+      "Elazığ Vişnesi",
+      "Ağın Leblebisi",
+      "Keban Biberi"
     ],
     "pointsOfInterest": [
       {
@@ -2887,11 +3027,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Erzincan Kebabı",
-      "Erzincan Pidesi",
-      "Erzincan Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Erzincan Kesme Kadayıfı",
+      "Kemaliye Lök Tatlısı / Eğin Lök Tatlısı",
+      "Erzincan Sütlacı",
+      "Erzincan Tulum Peyniri",
+      "Tercan Balı",
+      "Refahiye Balı",
+      "Erzincan Üzümlü Sarucu",
+      "Erzincan Ekşisu Doğal Maden Suyu",
+      "Kemaliye Kuru Kaymağı/Eğin Kuru Kaymağı",
+      "Cimin Üzümü",
+      "Kemaliye Dutu / Eğin Dutu",
+      "Kemah Doğal Kaynak Tuzu"
     ],
     "pointsOfInterest": [
       {
@@ -2968,11 +3115,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Erzurum Kebabı",
-      "Erzurum Pidesi",
-      "Erzurum Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Erzurum Mantısı /Erzurum Hıngeli",
+      "Hınıs Köftesi",
+      "Oltu Cağ Kebabı",
+      "Erzurum Herle Aşı Çorbası",
+      "Erzurum Ayran Aşı Çorbası",
+      "Erzurum Ekşili Dolma",
+      "Erzurum Tuzlu Lokumu",
+      "Erzurum Pekmezli Baklavası",
+      "Erzurum Un Helvası",
+      "Erzurum Hurma Tatlısı",
+      "Erzurum Pekmezli Kadayıfı",
+      "Erzurum Tel Helvası"
     ],
     "pointsOfInterest": [
       {
@@ -3089,11 +3243,15 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Eskişehir Kebabı",
-      "Eskişehir Pidesi",
-      "Eskişehir Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Eskişehir Çiğböreği (Çibörek)",
+      "Sivrihisar Kelem Dolması",
+      "Sivrihisar Arabaşı",
+      "Sivrihisar Muska Baklavası",
+      "Eskişehir Met Helvası",
+      "Sivrihisar Höşmerim Tatlısı",
+      "Eskişehir Simidi",
+      "Kızılinler Bal Kabağı",
+      "Sivrihisar Dövme Sucuğu"
     ],
     "pointsOfInterest": [
       {
@@ -3210,11 +3368,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Baklava",
-      "Beyran",
-      "Ali Nazik",
-      "Katmer",
-      "Yuvalama"
+      "Gaziantep Simit Aşı/Antep Simit Aşı",
+      "Gaziantep / Antep Ekşili / Akıtmalı Ufak Köfte",
+      "Gaziantep Omacı/Antep Omacı/Pisik Köftesi",
+      "Gaziantep Sini Köftesi",
+      "Gaziantep/Antep Sebzeli Kebap",
+      "Gaziantep / Antep Altı Ezmeli Kebap, Gaziantep / Antep Altı Ezmeli Kuşbaşı Kebabı, Gaziantep / Antep Altı Ezmeli Kıyma Kebabı",
+      "Antep Lahmacunu / Gaziantep Lahmacunu",
+      "Antep Tırnaklı Pidesi / Gaziantep Tırnaklı Pidesi / Antep Pidesi",
+      "Antep Katmeri",
+      "Antep Baklavası",
+      "Antep Peynirli İrmik Helvası / Gaziantep Peynirli İrmik Helvası",
+      "Gaziantep Şirin Tarhanası"
     ],
     "pointsOfInterest": [
       {
@@ -3331,11 +3496,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Giresun Kebabı",
-      "Giresun Pidesi",
-      "Giresun Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Alucra Oğlak Kebabı",
+      "Görele Dondurması",
+      "Giresun Fındık Ezmeli Kadayıf Tatlısı",
+      "Çavuşlu Ekmeği",
+      "Çamoluk Şeker Kuru Fasulyesi",
+      "Piraziz Elması",
+      "Giresun Isırganı",
+      "Giresun Fındık Ezmesi",
+      "Giresun Kalınkara Fındığı /Giresun Karası",
+      "Giresun Sivri Fındığı",
+      "Giresun Tombul Fındığı",
+      "Şebinkarahisar Karadutu"
     ],
     "pointsOfInterest": [
       {
@@ -3422,11 +3594,17 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Gümüşhane Kebabı",
-      "Gümüşhane Pidesi",
-      "Gümüşhane Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Gümüşhane Deleme Peyniri",
+      "Gümüşhane Ekmeği",
+      "Gümüşhane Sironu",
+      "Gümüşhane Şeker Fasulyesi",
+      "Gümüşhane Kuşburnu Nektarı",
+      "Şiran Kök Pekmezi",
+      "Kelkit Ketesi",
+      "Kürtün Araköy Ekmeği",
+      "Kelkit Şeker Fasulyesi",
+      "Gümüşhane Dut Pestili",
+      "Gümüşhane Kömesi"
     ],
     "pointsOfInterest": [
       {
@@ -3543,11 +3721,17 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Hakkari Kebabı",
-      "Hakkari Pidesi",
-      "Hakkari Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Hakkari Girara Huluga",
+      "Hakkari Gulol",
+      "Hakkari Kepaye",
+      "Gayle Zengil",
+      "Hakkâri Doleme",
+      "Hakkâri Doğaba",
+      "Hakkari Lalaped Tatlısı",
+      "Hakkari Kadesi",
+      "Yüksekova Çirek Peyniri",
+      "Çukurca Tahini",
+      "Hakkâri Kıris"
     ],
     "pointsOfInterest": [
       {
@@ -3624,11 +3808,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Künefe",
-      "Tepsi Kebabı",
-      "Oruk",
-      "Humus",
-      "Kağıt Kebabı"
+      "Hatay Fellah Köftesi",
+      "Hatay Halavet Kebabı",
+      "Hatay Tepsi Kebabı",
+      "Hatay Yoğurtlu Kebap",
+      "Antakya Kağıt Kebabı",
+      "Hatay Bahtenis Dolması",
+      "Antakya Künefesi",
+      "Antakya Künefelik Peyniri",
+      "Hatay Ispanaklı Börek",
+      "Hatay Peynirli İrmik Helvası",
+      "Hatay Taş Kadayıfı",
+      "Hatay Tel Kadayıfı"
     ],
     "pointsOfInterest": [
       {
@@ -3745,11 +3936,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Isparta Kebabı",
-      "Isparta Pidesi",
-      "Isparta Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Isparta Kabune Pilavı",
+      "Senirkent Banağı",
+      "Uluborlu Banağı",
+      "Senirkent Samsa Tatlısı",
+      "Isparta Elması",
+      "Uluborlu Kuyruğu Sulu Böreği",
+      "Yalvaç Hamursuzu",
+      "Senirkent Dimrit Üzümü",
+      "Senirkent Üzüm Pekmezi",
+      "Çiçekpınar Yoncası",
+      "Sütçüler Kekiği",
+      "Uluborlu Kirazı"
     ],
     "pointsOfInterest": [
       {
@@ -3866,11 +4064,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Iğdır Kebabı",
-      "Iğdır Pidesi",
-      "Iğdır Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Iğdır Taş Köfte Yemeği",
+      "Iğdır Omaç Aşı Çorbası",
+      "Iğdır Bozbaş Yemeği",
+      "Iğdır Patlıcan Reçeli",
+      "Iğdır Beyaz Üzümü /Miskalı",
+      "Iğdır Kayısısı"
     ],
     "pointsOfInterest": [
       {
@@ -3947,11 +4146,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
+      "İstanbul Simidi",
+      "Şile Kestane Balı",
+      "Silivri Yoğurdu",
       "Balık Ekmek",
       "Islak Hamburger",
-      "Sultanahmet Köfte",
-      "Kanlıca Yoğurdu",
-      "Simit"
+      "Sultanahmet Köfte"
     ],
     "pointsOfInterest": [
       {
@@ -4068,11 +4268,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Boyoz",
-      "İzmir Kumru",
-      "Midye Dolma",
-      "Söğüş",
-      "Şambali"
+      "Tire Şiş Köfte",
+      "Ödemiş Köftesi",
+      "İzmir Kumrusu",
+      "Bergama Çığırtması",
+      "Menemen Menemeni",
+      "Beydağ Simit Dürüm",
+      "Bergama Köftesi",
+      "İzmir Şambalisi",
+      "İzmir Tulum Peyniri",
+      "Ödemiş Nohut Mayalı Ekmeği",
+      "Bergama Tulum Peyniri",
+      "Bademli Koruk Şerbeti"
     ],
     "pointsOfInterest": [
       {
@@ -4189,11 +4396,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Kahramanmaraş Kebabı",
-      "Kahramanmaraş Pidesi",
-      "Kahramanmaraş Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Maraş Ekşili Çorba",
+      "Maraş Tarhanası",
+      "Afşin Tava",
+      "Maraş Eli Böğründe / Maraş Yanyana",
+      "Maraş Kelle Paçası",
+      "Andırın Tirşiği",
+      "Maraş Dondurması",
+      "Kahramanmaraş Çiriş Böreği",
+      "Elbistan Kelle Peyniri",
+      "Maraş Ravanda Şerbeti",
+      "Maraş Parmak /Sıkma Peyniri",
+      "Kahramanmaraş Bertiz Kabarcık Üzümü / Maraş Bertiz Kabarcık Üzümü"
     ],
     "pointsOfInterest": [
       {
@@ -4310,11 +4524,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Karabük Kebabı",
-      "Karabük Pidesi",
-      "Karabük Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Eflani Hindi Bandırması",
+      "Yenice Ihlamur Balı",
+      "Safranbolu Kıtırı",
+      "Safranbolu Lokumu",
+      "Safranbolu Çavuş Üzümü",
+      "Safranbolu Maniye Domatesi",
+      "Safranbolu Safranı"
     ],
     "pointsOfInterest": [
       {
@@ -4421,11 +4637,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Karaman Kebabı",
-      "Karaman Pidesi",
-      "Karaman Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Karaman İlisıra Dolması",
+      "Karaman Şebit Pilavı",
+      "Karaman Tahinli Pide",
+      "Ermenek Batırması",
+      "Karaman Guymak Tatlısı",
+      "Ermenek Helvası",
+      "Karaman Divle Obruğu Tulum Peyniri",
+      "Karaman Mayalısı",
+      "Karaman Kırma Böreği",
+      "Karaman Ekşikara Üzümü",
+      "Başyayla Karın Kaymağı",
+      "Kazımkarabekir Kabak Çekirdeği"
     ],
     "pointsOfInterest": [
       {
@@ -4542,11 +4765,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Kars Kebabı",
-      "Kars Pidesi",
-      "Kars Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Kars Gravyer Peyniri",
+      "Kars Balı",
+      "Kars Ketesi",
+      "Kars Kaz Eti",
+      "Kars Kaşarı",
+      "Kağızman Uzun Elması"
     ],
     "pointsOfInterest": [
       {
@@ -4663,11 +4887,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Kastamonu Kebabı",
-      "Kastamonu Pidesi",
-      "Kastamonu Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Kastamonu Tiridi / Kastamonu Simit Tiridi",
+      "Taşköprü Kuyu Kebabı",
+      "Cide Tarhanası",
+      "Araç Akdene Göce Çorbası",
+      "İhsangazi Ekşili Pilavı",
+      "Pınarbaşı Kara Çorba",
+      "Kastamonu Çekme Helvası",
+      "Kastamonu Kestane Balı",
+      "Kastamonu Pastırması",
+      "Devrekani Cırık Tatlısı",
+      "Cide Ceviz Helvası",
+      "Kastamonu Simidi"
     ],
     "pointsOfInterest": [
       {
@@ -4784,11 +5015,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Mantı",
-      "Pastırma",
-      "Sucuk",
-      "Yağlama",
-      "Nevzine"
+      "Kayseri Fırın Ağzı Kebabı",
+      "Kayseri Tepsi Mantısı",
+      "Kayseri Mantısı",
+      "Kayseri Börek Aşı/ Kayseri Böre Aşı Çorbası",
+      "Kayseri Kurşun Aşı Çorbası",
+      "Kayseri Yağlaması",
+      "Kayseri Gül Baklavası",
+      "Kayseri Yağ Mantısı",
+      "Kayseri Katmeri",
+      "Kayseri Sucuk İçi",
+      "Kayseri Pastırması",
+      "Talas Çörekotlu Çömlek Peyniri"
     ],
     "pointsOfInterest": [
       {
@@ -4905,11 +5143,16 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Kilis Kebabı",
-      "Kilis Pidesi",
-      "Kilis Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Kilis Ekşili Kebabı",
+      "Kilis Tava",
+      "Kilis Şıhılmahşe",
+      "Cennet Çamuru / Kilis Kaymaklı Kırma Künefe",
+      "Kilis Katmeri",
+      "Kübbülmişviyye",
+      "Kilis Zeytinyağı",
+      "Kilis Kırk Semseği",
+      "Kilis Horoz Karası Üzümü",
+      "Kilis Kahvaltılık Toz Zahter"
     ],
     "pointsOfInterest": [
       {
@@ -4986,11 +5229,15 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Kocaeli Kebabı",
-      "Kocaeli Pidesi",
-      "Kocaeli Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Karamürsel Simit Dolması",
+      "Karamürsel Samanlı Zeytini",
+      "Gebze Bayram Çöreği",
+      "İzmit Simidi",
+      "Kandıra Manda Yoğurdu",
+      "Kandıra Dartısı",
+      "Değirmendere Fındığı",
+      "Kandıra Karpuzu",
+      "İzmit Pişmaniyesi"
     ],
     "pointsOfInterest": [
       {
@@ -5107,11 +5354,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Etli Ekmek",
-      "Fırın Kebabı",
-      "Bamya Çorbası",
-      "Sac Arası",
-      "Mevlana Böreği"
+      "Konya Fırın Kebabı / Konya Fürun Kebabı",
+      "Konya Kıtırlı Mantı",
+      "Akşehir Tandır Kebabı",
+      "Konya Balık Çokratması",
+      "Konya Badem Helvası",
+      "Konya Ekmek Salması",
+      "Konya Etliekmek",
+      "Akşehir Peynir Baklavası",
+      "Kadınhanı Tahinli Pidesi",
+      "Konya Karışık Börek",
+      "Konya Haside Tatlısı / Konya Kara Helvası",
+      "Konya Kakırdaklı Börek"
     ],
     "pointsOfInterest": [
       {
@@ -5228,11 +5482,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Kütahya Kebabı",
-      "Kütahya Pidesi",
-      "Kütahya Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Emet Kebabı",
+      "Kütahya Kızılcık Tarhanası",
+      "Gediz Tarhanası",
+      "Kütahya Kaz Tiridi",
+      "Kütahya Cimcik Aşı/Kütahya Cimcik",
+      "Tavşanlı Güveci / Tavşanlı Göveci",
+      "Emet Pidesi",
+      "Kütahya Köpük Helvası",
+      "Paşa Helvası",
+      "Kütahya Dolamber Böreği",
+      "Kütahya Tosunumu",
+      "Kütahya Pazarlar Kirazı"
     ],
     "pointsOfInterest": [
       {
@@ -5349,11 +5610,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Kırklareli Kebabı",
-      "Kırklareli Pidesi",
-      "Kırklareli Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Kırklareli Eski Kaşar Peyniri",
+      "Kırklareli Meşe Balı",
+      "Kırklareli Beyaz Peyniri",
+      "Brakana Tatlısı",
+      "Kırklareli Kıvırcık Kuzu Eti",
+      "Kırklareli Hardaliyesi",
+      "Babaeski Sarımsağı"
     ],
     "pointsOfInterest": [
       {
@@ -5470,11 +5733,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
+      "Karaahmetli Tokmak Köfte",
+      "Kırıkkale Keskin Tava",
+      "Kırıkkale Kılıçlar Soğanı",
+      "Delice Doğal Kaynak Tuzu",
       "Kırıkkale Kebabı",
-      "Kırıkkale Pidesi",
-      "Kırıkkale Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Kırıkkale Pidesi"
     ],
     "pointsOfInterest": [
       {
@@ -5551,11 +5815,15 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Kırşehir Kebabı",
-      "Kırşehir Pidesi",
-      "Kırşehir Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Kırşehir Ayva Boranısı",
+      "Kırşehir Süla Kabağı Yemeği",
+      "Kırşehir Çirleme Yemeği",
+      "Kırşehir Çullaması",
+      "Kaman Besmeç",
+      "Kırşehir Ahi Helvası",
+      "Kırşehir Höşmerim Tatlısı",
+      "Kaman Cevizi",
+      "Cemele Biberi"
     ],
     "pointsOfInterest": [
       {
@@ -5632,11 +5900,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Malatya Kebabı",
-      "Malatya Pidesi",
-      "Malatya Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Malatya Hırçikli Köfte",
+      "Malatya Ispanaklı Ekşili Köftesi",
+      "Malatya Simit Pilavı",
+      "Malatya Analı Kızlı Köfte / Malatya Tiritli Köfte",
+      "Malatya Kağıt Kebabı",
+      "Malatya İçli Köftesi",
+      "Malatya Pidesi/ Malatya Açık Ekmeği",
+      "Arapgir Deli Kız Baklavası",
+      "Malatya Ekşili Ekmek",
+      "Malatya Yassı Kadayıfı",
+      "Malatya Peyniri",
+      "Arapgir Peynirli Ekmek"
     ],
     "pointsOfInterest": [
       {
@@ -5753,11 +6028,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Manisa Kebabı",
-      "Manisa Pidesi",
-      "Manisa Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Kırkağaç Pideli Paça / Kırkağaç Çakal Pideli Paça",
+      "Akhisar Köfte",
+      "Salihli Odun Köfte",
+      "Kırkağaç Topalak Yemeği",
+      "Alaşehir Kapaması / Alaşehir Kapatması",
+      "Alaşehir Tahinli Pidesi",
+      "Soma Helvası",
+      "Soma Zeytinyağı",
+      "Akhisar Domat Zeytinyağı",
+      "Akhisar Uslu Zeytinyağı",
+      "Manisa Mesir Macunu",
+      "Manisa Taban Simidi"
     ],
     "pointsOfInterest": [
       {
@@ -5875,10 +6157,17 @@
     ],
     "localFoods": [
       "Mardin Kebabı",
-      "Mardin Pidesi",
-      "Mardin Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Mardin Kaburga Dolması",
+      "Mardin İncasiyye",
+      "Mardin Alluciye",
+      "Mardin Firkiye",
+      "Mardin Irok",
+      "Mardin Harire",
+      "Derik Halhalı Zeytinyağı",
+      "Mardin Kiliçesi / Mardin Kiliçe Çöreği",
+      "Midyat Tandır Ekmeği",
+      "Midyat Turşusu / Midyat Acur Turşusu",
+      "Midyat Zeynebi Üzümü"
     ],
     "pointsOfInterest": [
       {
@@ -5995,11 +6284,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Mersin Kebabı",
-      "Mersin Pidesi",
-      "Mersin Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Tarsus Kebabı",
+      "Mersin Tantunisi",
+      "Anamur Batırığı",
+      "Tarsus Humusu",
+      "Tarsus Fındık Lahmacunu",
+      "Tarsus Sarıulak Zeytinyağı",
+      "Mersin Kerebici",
+      "Mut Zeytinyağı",
+      "Tarsus Şalgamı",
+      "Tarsus Sarıulak Zeytini",
+      "Gülnar Kuş Üzümü",
+      "Mersin Kan Portakalı"
     ],
     "pointsOfInterest": [
       {
@@ -6116,11 +6412,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Muğla Kebabı",
-      "Muğla Pidesi",
-      "Muğla Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Muğla Sulu Kebabı",
+      "Muğla Köftesi",
+      "Bodrum Çökertme Kebabı",
+      "Milas Ekşili Köfte",
+      "Muğla Göce Tarhanası",
+      "Fethiye Tarhanası",
+      "Milas Köftesi",
+      "Muğla Çam Balı",
+      "Milas Çaykaması",
+      "Milas Ciğer Kavurması",
+      "Muğla Simidi",
+      "Marmaris Çam Balı"
     ],
     "pointsOfInterest": [
       {
@@ -6237,11 +6540,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
+      "Muş Köftesi",
+      "Muş Çorti Aşı (Yemeği)",
+      "Muş Çorti Turşusu",
+      "Muş Eski Kaşarı",
       "Muş Kebabı",
-      "Muş Pidesi",
-      "Muş Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Muş Pidesi"
     ],
     "pointsOfInterest": [
       {
@@ -6358,11 +6662,14 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Nevşehir Kebabı",
-      "Nevşehir Pidesi",
-      "Nevşehir Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Nevşehir Testi Kebabı",
+      "Nevşehir Tahinli Simidi",
+      "Kaymaklı Çöreği",
+      "Kaymaklı Kuru Kaymağı",
+      "Nevşehir Simidi",
+      "Nevşehir Parmak Üzümü",
+      "Derinkuyu Kuru Fasulyesi",
+      "Nevşehir Kabak Çekirdeği"
     ],
     "pointsOfInterest": [
       {
@@ -6479,11 +6786,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Niğde Kebabı",
-      "Niğde Pidesi",
-      "Niğde Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Niğde Kelle Söğüş",
+      "Niğde Tavası",
+      "Bor Söğürmesi",
+      "Niğde Sarım Burma Tatlısı",
+      "Niğde Tahinlisi",
+      "Niğde Geven Balı",
+      "Darboğaz Kirazı"
     ],
     "pointsOfInterest": [
       {
@@ -6600,11 +6909,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Ordu Kebabı",
-      "Ordu Pidesi",
-      "Ordu Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Yalıköy Köftesi",
+      "Ordu Pancar Çorbası / Ordu Karalahana Çorbası",
+      "Ordu Zeytinyağlı Karalahana Sarması / Ordu Zeytinyağlı Pancar Sarması",
+      "Ordu Fırın Fasulyesi Kavurması",
+      "Ordu Fındık Tirmidi Kavurması",
+      "Ordu İçli Tava",
+      "Ordu Pidesi / Ordu Yağlısı",
+      "Ordu Fındıklı Burma Tatlısı",
+      "Ordu Perşembe Ceviz Helvası",
+      "Kabataş Helvası",
+      "Ordu Dağ Çileği Reçeli",
+      "Ordu Taflan Turşusu"
     ],
     "pointsOfInterest": [
       {
@@ -6711,11 +7027,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Osmaniye Kebabı",
-      "Osmaniye Pidesi",
-      "Osmaniye Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Osmaniye Zorkun Tava",
+      "Osmaniye Yoğurtlu Kömbesi",
+      "Osmaniye Zeytinyağı",
+      "Osmaniye Bayram Kömbesi",
+      "Osmaniye Yer Fıstığı",
+      "Kadirli Turpu"
     ],
     "pointsOfInterest": [
       {
@@ -6832,11 +7149,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Rize Kebabı",
-      "Rize Pidesi",
-      "Rize Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Rize Etli Kara Lahana Sarması",
+      "Çayeli Kuru Fasulye Yemeği",
+      "Rize Muhlaması",
+      "Rize Enişte Lokumu",
+      "Derepazarı Pidesi",
+      "Rize Baston Ekmek",
+      "Ayder Balı",
+      "Çayeli Koloti Peyniri",
+      "Anzer Balı",
+      "Rize Pepeçurası",
+      "Rize Simidi",
+      "Rize Kokulu Üzümü"
     ],
     "pointsOfInterest": [
       {
@@ -6953,11 +7277,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Sakarya Kebabı",
-      "Sakarya Pidesi",
-      "Sakarya Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Sakarya Kazımpaşa Köftesi",
+      "Adapazarı Islama Köftesi",
+      "Adapazarı Dartılı Keşkek",
+      "Sakarya Üre Tatlısı",
+      "Sakarya Abhaz (Abaza) Peyniri",
+      "Adapazarı Kabak Tatlısı",
+      "Taraklı Uğut Tatlısı",
+      "Kocaali Çamdağı Kestane Balı",
+      "Karapürçek Cennet Hurması Pekmezi",
+      "Sapanca Cevizi",
+      "Taraklı Enginarı",
+      "Pamukova Ceviz Ezmesi"
     ],
     "pointsOfInterest": [
       {
@@ -7074,11 +7405,17 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Samsun Kebabı",
-      "Samsun Pidesi",
-      "Samsun Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Yakakent Mantısı",
+      "Samsun Kaz Tiridi",
+      "Çarşamba Keşkeği",
+      "Çarşamba Pidesi",
+      "Terme Pidesi",
+      "Bafra Pidesi",
+      "Salıpazarı Kestane Balı",
+      "Samsun Simidi",
+      "Çarşamba Kıvratması",
+      "Bafra Kaymaklı Lokum",
+      "Bafra Nokulu"
     ],
     "pointsOfInterest": [
       {
@@ -7195,11 +7532,16 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Siirt Kebabı",
-      "Siirt Pidesi",
-      "Siirt Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Siirt İçli Köftesi / Siirt Kiteli",
+      "Siirt Büryan Kebabı",
+      "Siirt Pırtike Çorbası",
+      "Siirt Perde Pilavı",
+      "Siirt Gebole Tatlısı",
+      "Siirt Varak Keek Tatlısı",
+      "Siirt Kuru Ekmeği",
+      "Pervari Balı",
+      "Siirt Fıstığı",
+      "Tillo Heriresi"
     ],
     "pointsOfInterest": [
       {
@@ -7276,11 +7618,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Sinop Kebabı",
-      "Sinop Pidesi",
-      "Sinop Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Sinop Mantısı",
+      "Boyabat Sırık Kebabı",
+      "Sinop Kestane Balı",
+      "Sinop Nokulu",
+      "Sinop Lakerdası",
+      "Boyabat Gazidere Domatesi"
     ],
     "pointsOfInterest": [
       {
@@ -7397,11 +7740,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Sivas Kebabı",
-      "Sivas Pidesi",
-      "Sivas Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Sivas Köftesi",
+      "Divriği Pilavı /Alatlı Pilavı",
+      "Sivas Katmeri",
+      "Ulaş Yaprak Döneri",
+      "Ulaş Etli Pidesi",
+      "Tonus Köftesi",
+      "Sivas Pastırması",
+      "Zara Balı",
+      "Sivas Pezik Turşusu / Sivas Pezik Dal Turşusu",
+      "Sivas Kellesi",
+      "Gürün Dut Pekmezi",
+      "Zara Sac Ekmeği"
     ],
     "pointsOfInterest": [
       {
@@ -7518,11 +7868,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Tekirdağ Kebabı",
-      "Tekirdağ Pidesi",
-      "Tekirdağ Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Tekirdağ Köftesi",
+      "Çorlu Kuzu Ciğer Sarma",
+      "Küçükyoncalı Keşkeği",
+      "Hayrabolu Çerkezmüsellim Köftesi / Hayrabolu Çerkezmüsellim Pabuç Köftesi",
+      "Tekirdağ Peynir Helvası",
+      "Hayrabolu Tatlısı",
+      "Tekirdağ Ramazan Çöreği",
+      "Tekirdağ Bulama",
+      "Malkara Eski Kaşar Peyniri",
+      "Tekirdağ Soğanı",
+      "Velimeşe Bozası",
+      "Tekirdağ Yapıncak Salamura Asma Yaprağı"
     ],
     "pointsOfInterest": [
       {
@@ -7640,10 +7997,17 @@
     ],
     "localFoods": [
       "Tokat Kebabı",
-      "Tokat Pidesi",
-      "Tokat Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Erbaa Katmeri",
+      "Tokat Bez Sucuk",
+      "Turhal Yoğurtmacı",
+      "Tokat Ekmeği",
+      "Tokat Yağlısı",
+      "Tokat Çöreği",
+      "Tokat Üzüm Tarhanası",
+      "Tokat Narince Salamura Asma Yaprağı",
+      "Tokat Karayaka Kuzu Eti",
+      "Reşadiye Kırmızı Pezik Turşusu",
+      "Zile Pekmezi"
     ],
     "pointsOfInterest": [
       {
@@ -7760,11 +8124,15 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Akçaabat Köfte",
-      "Kuymak",
+      "Akçaabat Köftesi",
+      "Trabzon Kuymağı",
+      "Sürmene Pidesi",
       "Hamsiköy Sütlacı",
-      "Karalahana Çorbası",
-      "Hamsili Pilav"
+      "Vakfıkebir Külek Peyniri",
+      "Tonya Tereyağı",
+      "Vakfıkebir Ekmeği",
+      "Yomra Elması",
+      "Arsin Foşa Fındığı"
     ],
     "pointsOfInterest": [
       {
@@ -7881,11 +8249,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Tunceli Kebabı",
-      "Tunceli Pidesi",
-      "Tunceli Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Tunceli Şorbik Çorbası",
+      "Munzur Balı",
+      "Tunceli Sarımsağı",
+      "Çemişgezek Ulukale Dutu",
+      "Tunceli Pülümür Yer Altı Kaynak Tuzu",
+      "Tunceli Kebabı"
     ],
     "pointsOfInterest": [
       {
@@ -7962,11 +8331,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Uşak Kebabı",
-      "Uşak Pidesi",
-      "Uşak Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Uşak Tarhanası",
+      "Karahallı Ciğeri",
+      "Uşak Baklavası",
+      "Uşak Gelin Helvası / Uşak Gelin Tatlısı",
+      "Uşak Helvası",
+      "Uşak Ulubey Zini Hamursuzu",
+      "Karahallı Kavunu"
     ],
     "pointsOfInterest": [
       {
@@ -8083,11 +8454,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Van Kebabı",
-      "Van Pidesi",
-      "Van Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Van Acem Köftesi",
+      "Van Kürt Köftesi",
+      "Tandırda Van Balığı / Tandırda Van İnci Kefali",
+      "Van Erişte Aşı",
+      "Van Helise Yemeği",
+      "Van Tava Yemeği",
+      "Van Otlu Peyniri",
+      "Van Pastası",
+      "Van Gül Reçeli",
+      "Van Gölü İnci Kefali",
+      "Gevaş Fasulyesi",
+      "Bahçesaray Cevizi"
     ],
     "pointsOfInterest": [
       {
@@ -8204,11 +8582,12 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
+      "Yalova Kestane Balı",
+      "Yalova Aronyası",
+      "Yalova Kivisi",
       "Yalova Kebabı",
       "Yalova Pidesi",
-      "Yalova Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Yalova Tatlısı"
     ],
     "pointsOfInterest": [
       {
@@ -8285,11 +8664,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Yozgat Kebabı",
-      "Yozgat Pidesi",
-      "Yozgat Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Yozgat Desti Kebabı",
+      "Yozgat Tandır Kebabı",
+      "Yozgat Arabaşısı",
+      "Yozgat Çanak Peyniri",
+      "Yozgat Parmak Çöreği",
+      "Sorgun Yağlısı",
+      "Yozgat Aydıncık Bağrıbütün Kavunu"
     ],
     "pointsOfInterest": [
       {
@@ -8386,11 +8767,13 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Zonguldak Kebabı",
-      "Zonguldak Pidesi",
-      "Zonguldak Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Zonguldak Malay Yemeği",
+      "Zonguldak Zılbıt Yemeği",
+      "Devrek Beyaz Baklavası / Devrek Baklavası",
+      "Devrek Kömeci/Devrek Cevizli Kömeci",
+      "Çaycuma Manda Yoğurdu",
+      "Devrek Kireni",
+      "Karadeniz Ereğli Osmanlı Çileği"
     ],
     "pointsOfInterest": [
       {
@@ -8467,11 +8850,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Çanakkale Kebabı",
-      "Çanakkale Pidesi",
-      "Çanakkale Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Gelibolu Peynir Helvası",
+      "Biga Peynir Tatlısı",
+      "Bayramiç Tahin Helvası",
+      "Işıkeli Nohut Kahvesi",
+      "Bayramiç Zeytinyağı",
+      "Geyikli Zeytinyağı",
+      "Ezine Peyniri",
+      "Bozcaada Çavuş Üzümü",
+      "Bayramiç Elması",
+      "Çanakkale Domatesi",
+      "Lapseki Şeftalisi",
+      "Yenice Kırmızı Biberi"
     ],
     "pointsOfInterest": [
       {
@@ -8588,11 +8978,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Çankırı Kebabı",
-      "Çankırı Pidesi",
-      "Çankırı Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Çankırı Cimcik Hamuru Çorbası",
+      "Çankırı Tutmaç Çorbası",
+      "Çerkeş Pırasa Dolması",
+      "Çankırı Bütün Et",
+      "Çankırı Sarımsaklı Et",
+      "Çankırı Kıymalısı / Çankırı Kapalı Pidesi",
+      "Kurşunlu Keşkeği",
+      "Çerkeş Lokumu",
+      "Çerkeş Sırma Baklavası",
+      "Şabanözü Dondurma Helvası",
+      "Çankırı Kesme Kadayıfı",
+      "Çankırı Hameyli Tatlısı"
     ],
     "pointsOfInterest": [
       {
@@ -8709,11 +9106,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Çorum Kebabı",
-      "Çorum Pidesi",
-      "Çorum Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Çorum Kuru Mantısı",
+      "İskilip Dolması",
+      "Çorum Yırtma Yemeği",
+      "Çorum Baklavası",
+      "Osmancık Ayvalı Yahnisi",
+      "Osmancık Kaypak Yemeği",
+      "Osmancık Yaprak İçi Yemeği",
+      "İskilip Baklavası",
+      "Osmancık Malak Tatlısı",
+      "Kargı Tulum Peyniri",
+      "Alaca Cızlağı",
+      "Osmancık Kapari Turşusu"
     ],
     "pointsOfInterest": [
       {
@@ -8830,11 +9234,18 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Urfa Kebabı",
-      "Lahmacun",
-      "Çiğ Köfte",
-      "Borani",
-      "Mırra"
+      "Urfa Aya Köftesi / Şanlıurfa Aya Köftesi",
+      "Urfa Miftahi Tas Kebabı/ Şanlıurfa Miftahi Tas Kebabı",
+      "Şanlıurfa Tepsi Kebabı / Urfa Tepsi Kebabı",
+      "Urfa (Şanlıurfa) Patlıcanlı Kebabı",
+      "Urfa Kazan Kebabı / Şanlıurfa Kazan Kebabı",
+      "Urfa Soğan Kebabı / Şanlıurfa Soğan Kebabı",
+      "Urfa (Şanlıurfa) Lahmacunu (Kıymalı Ekmeği)",
+      "Urfa Pendirli Kedeyif / Şanlıurfa Peynirli Kadayıf",
+      "Şanlıurfa Pendirli Helvası / Şanlıurfa Peynirli Helvası",
+      "Urfa Şıllık Tatlısı (Şanlıurfa Şıllık Tatlısı)",
+      "Urfa Peyniri / Şanlıurfa Peyniri",
+      "Urfa Ağzı Açık / Şanlıurfa Ağzı Açık"
     ],
     "pointsOfInterest": [
       {
@@ -8951,11 +9362,17 @@
       "Mevsime uygun kıyafet ve ulaşım planı ile zaman kaybını azaltabilirsin."
     ],
     "localFoods": [
-      "Şırnak Kebabı",
-      "Şırnak Pidesi",
-      "Şırnak Tatlısı",
-      "Yöresel Çorba",
-      "Ev Usulü Lezzet"
+      "Şırnak Soryaz",
+      "Cizre Meyre / Cizre Mehir",
+      "Cizre Luzine Tatlısı",
+      "Beytüşşebap Balı",
+      "Şırnak Dergul Tahini",
+      "Cizre Bırınczer",
+      "Cizre Memilheva Kurabiyesi",
+      "Şımşıpe",
+      "Cizre Leyminete / Limonata",
+      "Şırnak Hanuhin / Şırnak Hanuhin Tatlısı",
+      "Silopi Behnat İnciri"
     ],
     "pointsOfInterest": [
       {
