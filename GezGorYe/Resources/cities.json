@@ -4041,7 +4041,7 @@
           "latitude": 41.0086,
           "longitude": 28.9802
         },
-        "shortDescription": "İstanbul'un tarihi yarımadasındaki ikonik anıtsal yapı; Bizans ve Osmanlı mirasının merkez noktası.",
+        "shortDescription": "Bizans ve Osmanlı mirasını tek yapıda buluşturan İstanbul'un en güçlü simgesi.",
         "recommendedVisitMinutes": 110
       },
       {
@@ -4051,7 +4051,7 @@
           "latitude": 41.0054,
           "longitude": 28.9768
         },
-        "shortDescription": "Mavi Camii olarak bilinen, İstanbul siluetinin en güçlü simgelerinden biri.",
+        "shortDescription": "Tarihi yarımadanın ana odağı; mimari ve meydan deneyimiyle ilk duraklardan biri.",
         "recommendedVisitMinutes": 75
       },
       {
@@ -4061,8 +4061,8 @@
           "latitude": 41.0115,
           "longitude": 28.9833
         },
-        "shortDescription": "Osmanlı yönetim merkezi; avlular, kutsal emanetler ve Boğaz manzarasıyla ana durak.",
-        "recommendedVisitMinutes": 140
+        "shortDescription": "Osmanlı saray yaşamını en güçlü biçimde hissettiren ana kompleks.",
+        "recommendedVisitMinutes": 150
       },
       {
         "name": "Yerebatan Sarnıcı",
@@ -4071,8 +4071,8 @@
           "latitude": 41.0084,
           "longitude": 28.9779
         },
-        "shortDescription": "Sütunlu atmosferiyle İstanbul'un en etkileyici kapalı tarih yapılarından biri.",
-        "recommendedVisitMinutes": 55
+        "shortDescription": "Atmosferi ve ışık tasarımıyla İstanbul'daki en etkileyici kapalı tarih duraklarından biri.",
+        "recommendedVisitMinutes": 60
       },
       {
         "name": "Süleymaniye Camii",
@@ -4081,8 +4081,8 @@
           "latitude": 41.0162,
           "longitude": 28.9637
         },
-        "shortDescription": "Mimar Sinan'ın başyapıtlarından; mimari, avlu ve Haliç panoraması için çok güçlü nokta.",
-        "recommendedVisitMinutes": 80
+        "shortDescription": "Mimar Sinan başyapıtı; avlu, siluet ve Haliç manzarasıyla üst düzey bir ziyaret noktası.",
+        "recommendedVisitMinutes": 85
       },
       {
         "name": "Kapalıçarşı",
@@ -4091,8 +4091,8 @@
           "latitude": 41.0107,
           "longitude": 28.968
         },
-        "shortDescription": "Tarihi çarşı deneyimi, el işçiliği ve alışveriş atmosferi için vazgeçilmez durak.",
-        "recommendedVisitMinutes": 95
+        "shortDescription": "Tarihi alışveriş kültürü, han dokusu ve el işçiliği için vazgeçilmez İstanbul deneyimi.",
+        "recommendedVisitMinutes": 100
       },
       {
         "name": "Mısır Çarşısı",
@@ -4101,28 +4101,8 @@
           "latitude": 41.0165,
           "longitude": 28.97
         },
-        "shortDescription": "Baharat, lokum ve geleneksel ürünlerle İstanbul'un canlı çarşı kültürünü hissettiren nokta.",
-        "recommendedVisitMinutes": 50
-      },
-      {
-        "name": "Galata Kulesi",
-        "category": "historical",
-        "coordinate": {
-          "latitude": 41.0256,
-          "longitude": 28.9741
-        },
-        "shortDescription": "Beyoğlu'nda yer alan tarihî kule; çevresi yürüyüş ve şehir manzarası için öne çıkar.",
-        "recommendedVisitMinutes": 65
-      },
-      {
-        "name": "Dolmabahçe Sarayı",
-        "category": "museum",
-        "coordinate": {
-          "latitude": 41.0392,
-          "longitude": 29.0007
-        },
-        "shortDescription": "Boğaz kıyısında saray mimarisi ve ihtişamlı iç mekânlarıyla premium ziyaret noktası.",
-        "recommendedVisitMinutes": 120
+        "shortDescription": "Baharat ve geleneksel ürün atmosferiyle kısa ama güçlü bir tarihi çarşı durağı.",
+        "recommendedVisitMinutes": 55
       },
       {
         "name": "İstanbul Arkeoloji Müzeleri",
@@ -4131,8 +4111,28 @@
           "latitude": 41.0117,
           "longitude": 28.9814
         },
-        "shortDescription": "Antik eser koleksiyonlarıyla tarih meraklıları için üst düzey müze durağı.",
-        "recommendedVisitMinutes": 100
+        "shortDescription": "Antik eser koleksiyonlarıyla dünya ölçeğinde müze deneyimi sunan ana kurum.",
+        "recommendedVisitMinutes": 110
+      },
+      {
+        "name": "Galata Kulesi",
+        "category": "historical",
+        "coordinate": {
+          "latitude": 41.0256,
+          "longitude": 28.9741
+        },
+        "shortDescription": "Beyoğlu hattında şehir siluetini izlemek ve yürüyüş rotası kurmak için ideal nokta.",
+        "recommendedVisitMinutes": 70
+      },
+      {
+        "name": "Dolmabahçe Sarayı",
+        "category": "museum",
+        "coordinate": {
+          "latitude": 41.0392,
+          "longitude": 29.0007
+        },
+        "shortDescription": "Boğaz kıyısında ihtişamlı saray mimarisi ve iç mekan detaylarıyla premium durak.",
+        "recommendedVisitMinutes": 125
       },
       {
         "name": "Kız Kulesi",
@@ -4141,7 +4141,7 @@
           "latitude": 41.0211,
           "longitude": 29.0041
         },
-        "shortDescription": "İstanbul Boğazı'nın en tanınan simgelerinden; özellikle gün batımı deneyimiyle öne çıkar.",
+        "shortDescription": "İstanbul Boğazı'nın simge yapısı; özellikle akşam saatlerinde güçlü bir deneyim noktası.",
         "recommendedVisitMinutes": 60
       },
       {
@@ -4151,8 +4151,8 @@
           "latitude": 41.0847,
           "longitude": 29.0568
         },
-        "shortDescription": "Boğaz hattında yer alan anıtsal hisar; tarih ve manzara için güçlü bir İstanbul durağı.",
-        "recommendedVisitMinutes": 80
+        "shortDescription": "Boğaz hattında konumlanan anıtsal hisar; tarih ve manzarayı birlikte sunar.",
+        "recommendedVisitMinutes": 85
       },
       {
         "name": "Beylerbeyi Sarayı",
@@ -4161,18 +4161,58 @@
           "latitude": 41.0419,
           "longitude": 29.0413
         },
-        "shortDescription": "Üsküdar tarafında Boğaz kıyısında yer alan zarif saray kompleksi.",
+        "shortDescription": "Anadolu yakasında Boğaz kıyısındaki zarif saray kompleksi; kısa ama nitelikli ziyaret.",
         "recommendedVisitMinutes": 85
       },
       {
-        "name": "Gülhane Parkı",
+        "name": "Ortaköy Camii ve Meydanı",
+        "category": "historical",
+        "coordinate": {
+          "latitude": 41.0473,
+          "longitude": 29.0266
+        },
+        "shortDescription": "Boğaz kıyısında mimari, meydan atmosferi ve fotoğraf rotası için çok güçlü durak.",
+        "recommendedVisitMinutes": 55
+      },
+      {
+        "name": "Fener-Balat Tarihi Sokakları",
+        "category": "historical",
+        "coordinate": {
+          "latitude": 41.0291,
+          "longitude": 28.9496
+        },
+        "shortDescription": "Tarihi dokulu sokaklar, renkli cepheler ve yürüyüş deneyimi için öne çıkan bölge.",
+        "recommendedVisitMinutes": 95
+      },
+      {
+        "name": "Pierre Loti Tepesi",
         "category": "nature",
         "coordinate": {
-          "latitude": 41.013,
-          "longitude": 28.9813
+          "latitude": 41.0536,
+          "longitude": 28.9335
         },
-        "shortDescription": "Tarihi yarımadada yoğun gezi rotasında nefes ve manzara molası için ideal park alanı.",
-        "recommendedVisitMinutes": 40
+        "shortDescription": "Haliç panoraması ve dinlenme molası için İstanbul içinde yüksek değerli seyir noktası.",
+        "recommendedVisitMinutes": 60
+      },
+      {
+        "name": "Emirgan Korusu",
+        "category": "nature",
+        "coordinate": {
+          "latitude": 41.1056,
+          "longitude": 29.0556
+        },
+        "shortDescription": "Boğaz hattında peyzaj, yürüyüş ve sakin mola için üst kalite yeşil alan.",
+        "recommendedVisitMinutes": 75
+      },
+      {
+        "name": "Çamlıca Tepesi",
+        "category": "nature",
+        "coordinate": {
+          "latitude": 41.0277,
+          "longitude": 29.0719
+        },
+        "shortDescription": "Şehrin iki yakasını bir arada izleyebileceğin güçlü panoramik seyir noktası.",
+        "recommendedVisitMinutes": 65
       }
     ]
   },
