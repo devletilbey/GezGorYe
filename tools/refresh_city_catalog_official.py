@@ -129,6 +129,90 @@ POI_ICONIC_KEYWORD_BOOSTS = {
     'dara antik kenti': 8,
 }
 
+CITY_ICONIC_PRIORITY_BOOSTS: Dict[str, List[str]] = {
+    'Adana': ['tas kopru', 'sabanci merkez camii', 'anavarza', 'varda koprusu', 'magarsus'],
+    'Adıyaman': ['nemrut', 'perre', 'arsemia', 'cendere', 'karakus tumulusu'],
+    'Afyonkarahisar': ['afyon kalesi', 'frig vadisi', 'ayasin', 'ayazini', 'ulucami'],
+    'Aksaray': ['ihlara', 'sultanhani', 'egri minare', 'hasan dagi', 'nora antik'],
+    'Amasya': ['kral kaya mezarlari', 'amasya kalesi', 'harsena', 'hazeranlar', 'amasya muzesi'],
+    'Ankara': ['anitkabir', 'anadolu medeniyetleri', 'gordion', 'haci bayram', 'ankara kalesi'],
+    'Antalya': ['kaleici', 'aspendos', 'perge', 'xanthos', 'patara', 'myra', 'phaselis', 'olympos'],
+    'Ardahan': ['cildir golu', 'ardahan kalesi', 'seytan kalesi', 'akcakale adasi'],
+    'Artvin': ['karagol', 'mençuna', 'mencuna', 'hatila', 'macahel', 'camili'],
+    'Aydın': ['afrodisias', 'didyma', 'milet', 'priene', 'kusadasi', 'güvercinada'],
+    'Ağrı': ['ishak pasa', 'agri dagi', 'agri dag', 'diyadin kanyonu', 'meteor cukuru'],
+    'Balıkesir': ['kazdagi', 'kaz dagi', 'cunda', 'ayvalik', 'antandros', 'kuscenneti'],
+    'Bartın': ['amasra', 'inkumu', 'guzelcehisar', 'lava sutunlari', 'amasra kalesi'],
+    'Batman': ['hasankeyf', 'malabadi', 'zeynel bey', 'mor kuryakus'],
+    'Bayburt': ['bayburt kalesi', 'aydintepe yeralti', 'baksi muzesi', 'coruh'],
+    'Bilecik': ['seyh edebali', 'ertugrul gazi', 'sogut', 'bilecik muzesi'],
+    'Bingöl': ['yuzen adalar', 'kigi kalesi', 'zag magarasi', 'hesarek'],
+    'Bitlis': ['ahlat', 'selcuklu mezarligi', 'nemrut krater', 'bitlis kalesi', 'ihlasiye medresesi'],
+    'Bolu': ['abant', 'yedigoller', 'golcuk', 'kartalkaya', 'yedigoeller'],
+    'Burdur': ['salda', 'sagalassos', 'kibyra', 'insuyu'],
+    'Bursa': ['ulucami', 'yesil turbe', 'cumalikizik', 'uludag', 'irgandi', 'kozahan'],
+    'Denizli': ['pamukkale', 'hierapolis', 'laodikya', 'kaklik', 'tripolis'],
+    'Diyarbakır': ['diyarbakir surlari', 'hevsel', 'ulu cami', 'zerzevan', 'ongozlu'],
+    'Düzce': ['akcakoca', 'ceneviz kalesi', 'samandere', 'guzeldere', 'efteni'],
+    'Edirne': ['selimiye', 'eski cami', 'uc serefeli', 'meriç koprusu', 'sarayiçi'],
+    'Elazığ': ['harput kalesi', 'harput', 'hazar golu', 'buzluk magarasi'],
+    'Erzincan': ['girlevik', 'kemaliye', 'karanlik kanyon', 'tas yolu'],
+    'Erzurum': ['cifte minareli', 'yakutiye', 'tortum selalesi', 'palandoken', 'ulu cami'],
+    'Eskişehir': ['odunpazari', 'sazova', 'midas', 'yazilikaya', 'balmumu'],
+    'Gaziantep': ['zeugma', 'gaziantep kalesi', 'rumkale', 'yesemek', 'bakircilar'],
+    'Giresun': ['giresun adasi', 'mavigol', 'kuzalan', 'kulakkaya', 'zeytinlik'],
+    'Gümüşhane': ['karaca magarasi', 'santa', 'limni golu', 'satala'],
+    'Hakkari': ['cilo', 'sat golu', 'sat buzul', 'bercelan'],
+    'Hatay': ['st pierre', 'saint pierre', 'habib-i neccar', 'arkeoloji muzesi', 'titus tuneli', 'harbiye'],
+    'Isparta': ['egirdir', 'yazili kanyon', 'kovada', 'antiocheia', 'lavanta'],
+    'Iğdır': ['tuz magarasi', 'kocbasli acik hava', 'aras kus', 'karakoyunlu'],
+    'İstanbul': ['ayasofya', 'topkapi', 'yerebatan', 'sultan ahmet', 'dolmabahce'],
+    'İzmir': ['efes', 'bergama', 'pergamon', 'saat kulesi', 'agora', 'sirince', 'selcuk'],
+    'Kahramanmaraş': ['germanicia', 'kahramanmaras kalesi', 'eshab-i kehf', 'yedikuyular'],
+    'Karabük': ['safranbolu', 'hadrianopolis', 'yenice ormanlari', 'kristal teras'],
+    'Karaman': ['binbir kilise', 'taskale', 'karaman kalesi', 'incesu magarasi'],
+    'Kars': ['ani', 'kars kalesi', 'sarikamis', 'cildir golu'],
+    'Kastamonu': ['ilgaz', 'valla kanyonu', 'horma kanyonu', 'kastamonu kalesi', 'mahmutbey'],
+    'Kayseri': ['erciyes', 'kultepe', 'hunat', 'kayseri kalesi', 'soganli'],
+    'Kilis': ['ravanda', 'oylum hoyuk', 'kilis muzesi', 'canbolat'],
+    'Kocaeli': ['ormanya', 'seka park', 'ballikayalar', 'eskihisar', 'osman hamdi'],
+    'Konya': ['mevlana', 'catalhoyuk', 'sille', 'ince minare', 'karatay', 'alaeddin'],
+    'Kütahya': ['aizanoi', 'kutahya kalesi', 'cini muzesi', 'germiyan', 'frig vadisi'],
+    'Kırklareli': ['igneada', 'longoz', 'dupnisa', 'vize', 'demirkoy'],
+    'Kırıkkale': ['silah sanayi muzesi', 'cesnigir', 'hasandede', 'sulu magara'],
+    'Kırşehir': ['ahievran', 'cacabey', 'asikpasa', 'seyfe golu'],
+    'Malatya': ['arslantepe', 'battalgazi', 'levent vadisi', 'gunpinar selalesi', 'silahtar mustafa'],
+    'Manisa': ['sardes', 'spil', 'aglayan kaya', 'kula peribacalari', 'muradiye camii'],
+    'Mardin': ['dara antik kenti', 'deyrulzafaran', 'kasimiye', 'zinciriye', 'mardin muzesi', 'midyat'],
+    'Mersin': ['kizkalesi', 'cennet cehennem', 'mamure kalesi', 'anemurium', 'soli', 'tarsus'],
+    'Muğla': ['bodrum kalesi', 'halikarnassos', 'knidos', 'kaunos', 'oludeniz', 'saklikent', 'tlos'],
+    'Muş': ['mus kalesi', 'murat koprusu', 'arak manastiri', 'mercimekkale'],
+    'Nevşehir': ['goreme acik hava', 'kapadokya', 'derinkuyu', 'kaymakli', 'uchisar', 'pasabag', 'zelve'],
+    'Niğde': ['gumusler manastiri', 'tyana', 'ala daglar', 'nigde kalesi', 'su kemerleri'],
+    'Ordu': ['boztepe', 'kurul kalesi', 'yason', 'ulugol', 'persembe yaylasi'],
+    'Osmaniye': ['karatepe', 'kastabala', 'toprakkale', 'aslantas'],
+    'Rize': ['ayder', 'zilkale', 'firtina vadisi', 'rize kalesi', 'pokut', 'elevit'],
+    'Sakarya': ['acarlar longozu', 'justinianus', 'maden deresi', 'tarakli', 'dogancay selalesi'],
+    'Samsun': ['bandirma vapuru', 'amisos', 'kizilirmak deltasi', 'gazi muzesi', 'sahinkaya kanyonu'],
+    'Siirt': ['tillo', 'veysel karani', 'botan vadisi', 'ulu cami', 'siirt kalesi'],
+    'Sinop': ['tarihi cezaevi', 'sinop kalesi', 'hamsilos', 'erfelek', 'inceburun'],
+    'Sivas': ['divrigi', 'gok medrese', 'cifte minareli', 'balikli kaplica', 'sugul'],
+    'Tekirdağ': ['rakoczi', 'namik kemal', 'ucmakdere', 'hora feneri', 'perinthos'],
+    'Tokat': ['ballica magarasi', 'tokat kalesi', 'gok medrese', 'sulusokak', 'niksar kalesi'],
+    'Trabzon': ['sumela', 'trabzon ayasofya', 'ataturk kosku', 'uzungol', 'boztepe'],
+    'Tunceli': ['munzur vadisi', 'munzur gozu', 'mercan vadisi', 'pulumur vadisi', 'pertek kalesi'],
+    'Uşak': ['ulubey kanyonu', 'blaundus', 'clandras', 'karun', 'tasyaran'],
+    'Van': ['akdamar', 'van kalesi', 'hosap', 'muradiye selalesi', 'van muzesi'],
+    'Yalova': ['termal', 'yuruyen kosk', 'sudusen', 'delmece', 'erikli'],
+    'Yozgat': ['sarikaya roma hamami', 'camlik milli park', 'kerkenes', 'nizamiye'],
+    'Zonguldak': ['gokgol magarasi', 'cehennemagzi', 'filyos', 'tios antik', 'eregli muzesi'],
+    'Çanakkale': ['troya', 'gelibolu', 'sehitler abidesi', 'assos', 'canakkale savaslari', 'troya muzesi', 'bozcaada'],
+    'Çankırı': ['tuz magarasi', 'ilgaz', 'tas mescit', 'cankiri kalesi'],
+    'Çorum': ['hattusa', 'alacahoyuk', 'yazilikaya', 'corum muzesi'],
+    'Şanlıurfa': ['gobeklitepe', 'balikligol', 'harran', 'halfeti', 'sanliurfa arkeoloji', 'haleplibahce'],
+    'Şırnak': ['cizre ulu camii', 'mem u zin', 'finik', 'kasrik bogazi', 'mor yakup'],
+}
+
 POI_CATEGORY_HINTS = {
     'museum': ['müze', 'muze', 'müzeleri', 'arkeoloji müzeleri', 'müzesi'],
     'waterfall': ['şelale', 'selale'],
@@ -382,6 +466,7 @@ def fetch_culture_category_map(client: HttpClient) -> Dict[str, str]:
 def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[str, str]) -> List[CandidatePOI]:
     out: List[CandidatePOI] = []
     city_fold = tr_fold(city_name)
+    city_manual_phrases = [low_tr(x) for x in CITY_ICONIC_PRIORITY_BOOSTS.get(city_name, [])]
     for x in items:
         try:
             lat = float(x.get('latitude'))
@@ -445,6 +530,15 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
         for k, w in POI_ICONIC_KEYWORD_BOOSTS.items():
             if k in text:
                 score += w
+        name_cat_text = low_tr(name + ' ' + source_category_name)
+        desc_text = low_tr(desc)
+        for idx, phrase in enumerate(city_manual_phrases):
+            if not phrase:
+                continue
+            if phrase in name_cat_text or phrase in desc_text:
+                # Strong city-specific manual ordering layer (decreasing by priority).
+                score += max(8.0, 22.0 - (idx * 2.5))
+                break
 
         if 'unesco' in text:
             score += 4
@@ -577,6 +671,16 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
     selected: List[CandidatePOI] = []
     selected_names = set()
     subtype_counts: Dict[str, int] = {}
+    city_manual_phrases = [low_tr(x) for x in CITY_ICONIC_PRIORITY_BOOSTS.get(city_name, [])]
+
+    def manual_rank(c: CandidatePOI) -> int:
+        name_cat = low_tr(c.name + ' ' + c.source_category_name)
+        for idx, phrase in enumerate(city_manual_phrases):
+            if not phrase:
+                continue
+            if phrase in name_cat:
+                return idx
+        return 999
 
     def subtype_key(c: CandidatePOI) -> str:
         t = low_tr(c.name + ' ' + c.source_category_name)
@@ -650,7 +754,7 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
             if len(selected) >= min(8, len(cands)):
                 break
 
-    selected = sorted(selected, key=lambda x: (-x.score, x.name))
+    selected = sorted(selected, key=lambda x: (manual_rank(x), -x.score, x.name))
 
     # Tail ranking: append more high-quality places without strict subtype caps.
     remainder = [c for c in cands if c.name not in selected_names]
@@ -668,7 +772,7 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
             bonus -= 1.2
         return c.score + bonus
 
-    remainder = sorted(remainder, key=lambda x: (-tail_score(x), -x.score, x.name))
+    remainder = sorted(remainder, key=lambda x: (manual_rank(x), -tail_score(x), -x.score, x.name))
 
     # Dynamic quality floor for tail so we keep breadth but avoid weak clutter.
     if len(cands) > 45:
@@ -685,6 +789,8 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
             continue
         selected.append(c)
         selected_names.add(c.name)
+
+    selected = sorted(selected, key=lambda x: (manual_rank(x), -x.score, x.name))
 
     return [
         {
