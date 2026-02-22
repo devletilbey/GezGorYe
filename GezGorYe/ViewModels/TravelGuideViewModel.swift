@@ -86,7 +86,10 @@ final class TravelGuideViewModel: ObservableObject {
         }
         filteredPOIs = pois
 
-        let optimized = optimizer.buildFastestPlan(start: city.center, pois: pois)
+        // Keep the visible list broad, but route optimization focused on the
+        // highest-ranked subset to avoid freezes in dense cities.
+        let routePOIs = Array(pois.prefix(Self.maxRouteOptimizationStops))
+        let optimized = optimizer.buildFastestPlan(start: city.center, pois: routePOIs)
         routePlan = optimized
 
         let stops = optimized.orderedStops.map { $0.poi.coordinate.location }
@@ -94,6 +97,7 @@ final class TravelGuideViewModel: ObservableObject {
     }
 
     private static let emptyRoutePlan = RoutePlan(orderedStops: [], totalDistanceKm: 0, totalMinutes: 0)
+    private static let maxRouteOptimizationStops = 16
 
     private static func sanitizedCity(_ city: City) -> City {
         let filtered = city.pointsOfInterest.filter { isTravelRelevant($0, in: city) }

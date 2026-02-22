@@ -104,6 +104,31 @@ POI_STRONG_POSITIVE = {
     'seyir': 3,
 }
 
+POI_ICONIC_KEYWORD_BOOSTS = {
+    'anitkabir': 12,
+    'ayasofya': 10,
+    'topkapi': 8,
+    'topkapı': 8,
+    'mevlana': 9,
+    'mevlâna': 9,
+    'efes': 10,
+    'troya': 10,
+    'goreme': 10,
+    'göreme': 10,
+    'kapadokya': 10,
+    'nemrut': 9,
+    'sumela': 9,
+    'sumela': 9,
+    'balikligol': 8,
+    'balıklıgol': 8,
+    'balıklıgöl': 8,
+    'pamukkale': 10,
+    'gordion': 8,
+    'ani oren yeri': 9,
+    'ani harabeleri': 9,
+    'dara antik kenti': 8,
+}
+
 POI_CATEGORY_HINTS = {
     'museum': ['müze', 'muze', 'müzeleri', 'arkeoloji müzeleri', 'müzesi'],
     'waterfall': ['şelale', 'selale'],
@@ -113,6 +138,13 @@ POI_CATEGORY_HINTS = {
         'vadisi', 'vadi', 'parkı', 'parki', 'orman'
     ],
 }
+
+HISTORICAL_NAME_HINTS = [
+    'antik kent', 'ören yeri', 'oren yeri', 'kale', 'hisar', 'cami', 'camii',
+    'kilise', 'manastır', 'manastir', 'medrese', 'hamam', 'han', 'bedesten',
+    'türbe', 'turbe', 'saray', 'kervansaray', 'sarnıç', 'sarnic', 'höyük',
+    'hoyuk', 'anıt', 'anit', 'külliye', 'kulliye', 'agora'
+]
 
 FOOD_GROUP_POSITIVE = [
     'fırıncılık', 'firincilik', 'pastacılık', 'pastacilik', 'hamur işi', 'hamur isi',
@@ -410,6 +442,9 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
         score += float(x.get('featured') or 0) * 2.0
         score += strong_positive_hits
         score += min(len(desc) / 220.0, 2.5)
+        for k, w in POI_ICONIC_KEYWORD_BOOSTS.items():
+            if k in text:
+                score += w
 
         if 'unesco' in text:
             score += 4
@@ -424,15 +459,25 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
         if has_locality_marker and not locality_whitelisted:
             score -= 2.5
 
-        if any(k in text for k in POI_CATEGORY_HINTS['waterfall']):
+        name_or_cat = f'{lf_name} {lf_cat}'
+        if any(k in name_or_cat for k in POI_CATEGORY_HINTS['waterfall']) or any(k in lf_name for k in ['şelale', 'selale']):
             app_category = 'waterfall'
             score += 1.5
-        elif any(k in text for k in POI_CATEGORY_HINTS['museum']) or 'müze' in low_tr(source_category_name) or 'muze' in low_tr(source_category_name):
+        elif any(k in name_or_cat for k in POI_CATEGORY_HINTS['museum']) or 'müze' in lf_name or 'muze' in lf_name:
             app_category = 'museum'
             score += 1.2
-        elif any(k in text for k in POI_CATEGORY_HINTS['nature']) or any(k in low_tr(source_category_name) for k in ['park', 'göl', 'gol', 'yayla', 'mağara', 'magara', 'kanyon']):
+        elif any(k in name_or_cat for k in HISTORICAL_NAME_HINTS):
+            app_category = 'historical'
+            score += 1.0
+        elif any(k in name_or_cat for k in POI_CATEGORY_HINTS['nature']) or any(k in lf_cat for k in ['park', 'göl', 'gol', 'yayla', 'mağara', 'magara', 'kanyon']):
             app_category = 'nature'
             score += 0.8
+        elif any(k in lf_desc for k in HISTORICAL_NAME_HINTS):
+            app_category = 'historical'
+            score += 0.6
+        elif any(k in lf_desc for k in POI_CATEGORY_HINTS['nature']):
+            app_category = 'nature'
+            score += 0.4
         else:
             app_category = 'historical'
             score += 0.8
@@ -506,11 +551,28 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
     for c in cands:
         buckets.setdefault(c.app_category, []).append(c)
 
-    target = 12
-    if len(cands) >= 25:
-        target = 14
-    if len(cands) <= 8:
-        target = len(cands)
+    # Remove the old hard cap. Build a curated "priority head" and then append
+    # a wider ranked tail so users can see more places while the most important
+    # stops remain at the top.
+    if len(cands) <= 10:
+        priority_head_target = len(cands)
+    elif len(cands) <= 20:
+        priority_head_target = min(len(cands), 12)
+    elif len(cands) <= 35:
+        priority_head_target = 16
+    else:
+        priority_head_target = 20
+
+    # Keep a generous total size for UX/performance balance; this is much wider
+    # than before but still avoids overwhelming the app with low-value tails.
+    if len(cands) <= 20:
+        total_target = len(cands)
+    elif len(cands) <= 40:
+        total_target = min(len(cands), 26)
+    elif len(cands) <= 70:
+        total_target = min(len(cands), 34)
+    else:
+        total_target = min(len(cands), 42)
 
     selected: List[CandidatePOI] = []
     selected_names = set()
@@ -537,9 +599,9 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
     def subtype_limit(c: CandidatePOI) -> int:
         key = subtype_key(c)
         if key == 'cami':
-            return 3
+            return 4
         if key in {'turbe', 'kilise', 'manastir'}:
-            return 2
+            return 3
         if key == 'medrese':
             return 3
         return 99
@@ -557,26 +619,26 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
                 subtype_counts[sk] = subtype_counts.get(sk, 0) + 1
 
     for c in cands:
-        if len(selected) >= target:
+        if len(selected) >= priority_head_target:
             break
         if c.name in selected_names:
             continue
 
         # Limit overconcentration in one category unless city has few alternatives.
         cat_count = sum(1 for x in selected if x.app_category == c.app_category)
-        max_cat = 6 if target >= 14 else 5
-        if cat_count >= max_cat and len(buckets.get(c.app_category, [])) > max_cat:
+        max_cat = 7 if priority_head_target >= 18 else 6
+        if cat_count >= max_cat and len(buckets.get(c.app_category, [])) > max_cat + 1:
             continue
 
         sk = subtype_key(c)
-        if subtype_counts.get(sk, 0) >= subtype_limit(c) and len(cands) > target + 3:
+        if subtype_counts.get(sk, 0) >= subtype_limit(c) and len(cands) > priority_head_target + 4:
             continue
 
         selected.append(c)
         selected_names.add(c.name)
         subtype_counts[sk] = subtype_counts.get(sk, 0) + 1
 
-    if len(selected) < min(6, len(cands)):
+    if len(selected) < min(8, len(cands)):
         for c in cands:
             if c.name not in selected_names:
                 sk = subtype_key(c)
@@ -585,10 +647,44 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
                 selected.append(c)
                 selected_names.add(c.name)
                 subtype_counts[sk] = subtype_counts.get(sk, 0) + 1
-            if len(selected) >= min(6, len(cands)):
+            if len(selected) >= min(8, len(cands)):
                 break
 
-    selected = sorted(selected, key=lambda x: (-x.score, x.name))[:target]
+    selected = sorted(selected, key=lambda x: (-x.score, x.name))
+
+    # Tail ranking: append more high-quality places without strict subtype caps.
+    remainder = [c for c in cands if c.name not in selected_names]
+
+    def tail_score(c: CandidatePOI) -> float:
+        text = low_tr(c.name + ' ' + c.source_category_name)
+        bonus = 0.0
+        # Keep globally important structures and nature icons higher in the tail.
+        if any(k in text for k in ['unesco', 'antik kent', 'ören yeri', 'oren yeri', 'milli park', 'şelale', 'selale', 'kanyon', 'mağara', 'magara', 'müze', 'muze', 'saray', 'kale', 'hisar']):
+            bonus += 2.0
+        if c.app_category in {'museum', 'nature', 'waterfall'}:
+            bonus += 0.8
+        # Slightly reduce repetitive religious-only entries in deeper ranks.
+        if any(k in text for k in ['cami', 'camii', 'turbe', 'türbe']) and c.score < 11:
+            bonus -= 1.2
+        return c.score + bonus
+
+    remainder = sorted(remainder, key=lambda x: (-tail_score(x), -x.score, x.name))
+
+    # Dynamic quality floor for tail so we keep breadth but avoid weak clutter.
+    if len(cands) > 45:
+        min_tail_score = 6.0
+    elif len(cands) > 25:
+        min_tail_score = 5.0
+    else:
+        min_tail_score = 4.0
+
+    for c in remainder:
+        if len(selected) >= total_target:
+            break
+        if c.score < min_tail_score:
+            continue
+        selected.append(c)
+        selected_names.add(c.name)
 
     return [
         {
