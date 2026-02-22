@@ -5,28 +5,286 @@ import UIKit
 struct RootMapView: View {
     @StateObject private var viewModel = TravelGuideViewModel()
     @StateObject private var settings = AppSettings()
+    @State private var searchText = ""
 
     var body: some View {
-        DarkAppleMapView(
-            region: $viewModel.cameraRegion,
-            cities: viewModel.cities,
-            selectedCity: viewModel.selectedCity,
-            pois: viewModel.filteredPOIs,
-            routeCoordinates: viewModel.routeCoordinates,
-            accentColor: UIColor(settings.theme.palette.accent),
-            secondaryAccentColor: UIColor(settings.theme.palette.secondaryAccent),
-            onSelectCity: { city in
-                viewModel.selectCity(city)
+        GeometryReader { geometry in
+            ZStack {
+                DarkAppleMapView(
+                    region: $viewModel.cameraRegion,
+                    cities: viewModel.mapCities,
+                    selectedCity: viewModel.selectedCity,
+                    pois: viewModel.filteredPOIs,
+                    routeCoordinates: viewModel.routeCoordinates,
+                    accentColor: UIColor(settings.theme.palette.accent),
+                    secondaryAccentColor: UIColor(settings.theme.palette.secondaryAccent),
+                    onSelectCity: { city in
+                        searchText = city.name
+                        viewModel.selectCity(city)
+                    }
+                )
+                .ignoresSafeArea()
+
+                VStack(spacing: 12) {
+                    topHUD
+
+                    if !searchResults.isEmpty && viewModel.selectedCity == nil {
+                        searchResultsPanel
+                    }
+
+                    Spacer()
+                }
+                .padding(.horizontal, 12)
+                .padding(.top, 10)
+
+                VStack(spacing: 0) {
+                    Spacer()
+
+                    if let selectedCity = viewModel.selectedCity {
+                        cityBottomSheet(for: selectedCity, availableHeight: geometry.size.height)
+                    } else {
+                        mapOverviewPill
+                            .padding(.horizontal, 12)
+                            .padding(.bottom, 12)
+                    }
+                }
             }
-        )
-        .ignoresSafeArea()
-        .alert("Veri Yüklenemedi", isPresented: .constant(viewModel.loadingError != nil)) {
-            Button("Tamam") {
-                viewModel.loadingError = nil
+            .alert("Veri Yüklenemedi", isPresented: .constant(viewModel.loadingError != nil)) {
+                Button("Tamam") {
+                    viewModel.loadingError = nil
+                }
+            } message: {
+                Text(viewModel.loadingError ?? "")
             }
-        } message: {
-            Text(viewModel.loadingError ?? "")
         }
+    }
+
+    private var topHUD: some View {
+        VStack(spacing: 10) {
+            HStack(spacing: 8) {
+                HStack(spacing: 8) {
+                    Image(systemName: "map.fill")
+                    Text(viewModel.selectedCity?.name ?? "GezGorYe")
+                        .lineLimit(1)
+                }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.white)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 10)
+                .background(.black.opacity(0.42), in: Capsule())
+                .overlay(Capsule().stroke(.white.opacity(0.12), lineWidth: 1))
+
+                Spacer()
+
+                Button {
+                    searchText = ""
+                    viewModel.resetToTurkey()
+                } label: {
+                    Image(systemName: "globe.europe.africa.fill")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(width: 42, height: 42)
+                        .background(.black.opacity(0.42), in: Circle())
+                        .overlay(Circle().stroke(.white.opacity(0.12), lineWidth: 1))
+                }
+                .accessibilityLabel("Türkiye görünümü")
+            }
+
+            HStack(spacing: 8) {
+                HStack(spacing: 8) {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundStyle(.white.opacity(0.7))
+
+                    TextField("81 il içinde ara", text: $searchText)
+                        .textInputAutocapitalization(.words)
+                        .autocorrectionDisabled()
+                        .foregroundStyle(.white)
+
+                    if !searchText.isEmpty {
+                        Button {
+                            searchText = ""
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundStyle(.white.opacity(0.8))
+                        }
+                    }
+                }
+                .padding(.horizontal, 12)
+                .frame(height: 46)
+                .background(.black.opacity(0.48), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(.white.opacity(0.12), lineWidth: 1)
+                )
+
+                if viewModel.selectedCity != nil {
+                    Button {
+                        searchText = ""
+                        viewModel.resetToTurkey()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundStyle(.white)
+                            .frame(width: 46, height: 46)
+                            .background(.black.opacity(0.48), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                    .stroke(.white.opacity(0.12), lineWidth: 1)
+                            )
+                    }
+                    .accessibilityLabel("Seçimi kaldır")
+                }
+            }
+        }
+    }
+
+    private var searchResultsPanel: some View {
+        ScrollView {
+            LazyVStack(spacing: 6) {
+                ForEach(Array(searchResults.prefix(12))) { city in
+                    Button {
+                        searchText = city.name
+                        viewModel.selectCity(city)
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: "location.circle.fill")
+                                .foregroundStyle(settings.theme.palette.accent)
+
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(city.name)
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(.white)
+                                Text("\(city.pointsOfInterest.count) nokta  •  \(city.localFoods.count) lezzet")
+                                    .font(.caption)
+                                    .foregroundStyle(.white.opacity(0.68))
+                            }
+
+                            Spacer()
+
+                            Image(systemName: "chevron.right")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(.white.opacity(0.5))
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 10)
+                        .background(.white.opacity(0.04), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(8)
+        }
+        .frame(maxHeight: 260)
+        .background(.black.opacity(0.62), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(.white.opacity(0.12), lineWidth: 1)
+        )
+    }
+
+    private var mapOverviewPill: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "sparkles")
+                .foregroundStyle(settings.theme.palette.secondaryAccent)
+            Text("81 il hazır. Haritadan seç veya üstten ara.")
+                .font(.footnote.weight(.medium))
+                .foregroundStyle(.white)
+                .lineLimit(2)
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+        .background(.black.opacity(0.56), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(.white.opacity(0.12), lineWidth: 1)
+        )
+    }
+
+    private func cityBottomSheet(for city: City, availableHeight: CGFloat) -> some View {
+        VStack(spacing: 0) {
+            Capsule()
+                .fill(.white.opacity(0.24))
+                .frame(width: 42, height: 5)
+                .padding(.top, 8)
+
+            HStack(alignment: .top, spacing: 10) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(city.name)
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(.white)
+                    Text("\(viewModel.filteredPOIs.count) nokta • \(city.localFoods.count) lezzet • \(city.notes.count) not")
+                        .font(.caption)
+                        .foregroundStyle(.white.opacity(0.75))
+                }
+
+                Spacer()
+
+                Button {
+                    searchText = ""
+                    viewModel.resetToTurkey()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(.white)
+                        .frame(width: 34, height: 34)
+                        .background(.white.opacity(0.08), in: Circle())
+                }
+                .buttonStyle(.plain)
+            }
+            .padding(.horizontal, 14)
+            .padding(.top, 10)
+            .padding(.bottom, 10)
+
+            Divider()
+                .overlay(.white.opacity(0.08))
+
+            ScrollView(showsIndicators: false) {
+                CityDetailView(city: city)
+                    .environmentObject(viewModel)
+                    .environmentObject(settings)
+                    .padding(.horizontal, 14)
+                    .padding(.top, 14)
+                    .padding(.bottom, 24)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: min(max(availableHeight * 0.56, 360), 560))
+        .background(
+            LinearGradient(
+                colors: [
+                    Color.black.opacity(0.92),
+                    Color.black.opacity(0.78)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            ),
+            in: RoundedRectangle(cornerRadius: 24, style: .continuous)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(.white.opacity(0.12), lineWidth: 1)
+        )
+        .padding(.horizontal, 12)
+        .padding(.bottom, 12)
+        .shadow(color: .black.opacity(0.35), radius: 24, y: -8)
+    }
+
+    private var searchResults: [City] {
+        let query = searchText.normalizedSearchQuery
+        guard !query.isEmpty else { return [] }
+
+        return viewModel.cities.filter { city in
+            city.name.normalizedSearchQuery.contains(query)
+        }
+    }
+}
+
+private extension String {
+    var normalizedSearchQuery: String {
+        folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+            .replacingOccurrences(of: " ", with: "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
 
