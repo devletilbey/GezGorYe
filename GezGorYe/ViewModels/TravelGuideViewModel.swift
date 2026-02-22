@@ -62,7 +62,8 @@ final class TravelGuideViewModel: ObservableObject {
     private func loadCities() {
         do {
             let loaded = try repository.loadCities()
-            cities = loaded.sorted {
+            let sanitized = loaded.map(Self.sanitizedCity)
+            cities = sanitized.sorted {
                 $0.name.folding(options: .diacriticInsensitive, locale: .current)
                     < $1.name.folding(options: .diacriticInsensitive, locale: .current)
             }
@@ -94,28 +95,64 @@ final class TravelGuideViewModel: ObservableObject {
 
     private static let emptyRoutePlan = RoutePlan(orderedStops: [], totalDistanceKm: 0, totalMinutes: 0)
 
+    private static func sanitizedCity(_ city: City) -> City {
+        let filtered = city.pointsOfInterest.filter { isTravelRelevant($0, in: city) }
+        return City(
+            name: city.name,
+            center: city.center,
+            notes: city.notes,
+            localFoods: city.localFoods,
+            pointsOfInterest: filtered
+        )
+    }
+
     private static func isTravelRelevant(_ poi: POI, in city: City) -> Bool {
-        let name = poi.name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        let description = poi.shortDescription.lowercased()
+        let rawName = poi.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let name = normalizedText(rawName)
+        let description = normalizedText(poi.shortDescription)
         let combined = "\(name) \(description)"
-        let cityName = city.name.lowercased()
+        let cityName = normalizedText(city.name)
 
         if name == cityName {
             return false
         }
 
         let exactBlacklist: Set<String> = [
-            "haliç",
-            "15 temmuz şehitler köprüsü",
-            "yavuz sultan selim köprüsü",
-            "osmangazi köprüsü",
-            "1915 çanakkale köprüsü",
-            "nissibi köprüsü",
-            "yeni kömürhan köprüsü",
-            "beğendik köprüsü"
+            "halic",
+            "15 temmuz sehitler koprusu",
+            "bogazici koprusu",
+            "yavuz sultan selim koprusu",
+            "osmangazi koprusu",
+            "1915 canakkale koprusu",
+            "nissibi koprusu",
+            "yeni komurhan koprusu",
+            "begendik koprusu"
         ]
         if exactBlacklist.contains(name) {
             return false
+        }
+
+        let nameBlacklists = [
+            "15 temmuz sehitler koprusu",
+            "bogazici koprusu",
+            "yavuz sultan selim koprusu",
+            "osmangazi koprusu",
+            "1915 canakkale koprusu",
+            "nissibi koprusu",
+            "yeni komurhan koprusu",
+            "begendik koprusu"
+        ]
+        if nameBlacklists.contains(where: { name.contains($0) }) {
+            return false
+        }
+
+        if cityName == "istanbul" && name.contains("kopru") {
+            let historicBridgeWhitelist = [
+                "valens kemeri", "bizans su kemeri", "galata koprusu"
+            ]
+            if !historicBridgeWhitelist.contains(where: { name.contains($0) }) {
+                return false
+            }
         }
 
         let disallowedPatterns = [
@@ -138,6 +175,22 @@ final class TravelGuideViewModel: ObservableObject {
         }
 
         return true
+    }
+
+    private static func normalizedText(_ value: String) -> String {
+        let lowered = value
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: Locale(identifier: "tr_TR"))
+            .replacingOccurrences(of: "ı", with: "i")
+        let mapped = lowered
+            .replacingOccurrences(of: "ç", with: "c")
+            .replacingOccurrences(of: "ğ", with: "g")
+            .replacingOccurrences(of: "ö", with: "o")
+            .replacingOccurrences(of: "ş", with: "s")
+            .replacingOccurrences(of: "ü", with: "u")
+        return mapped
+            .replacingOccurrences(of: "[^a-z0-9 ]+", with: " ", options: .regularExpression)
+            .replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     private static let turkeyRegion = MKCoordinateRegion(
