@@ -378,6 +378,74 @@ def low_tr(s: str) -> str:
     return tr_fold(s)
 
 
+TATILBUDUR_MATCH_STOPWORDS = {
+    've', 'ile', 'the', 'of', 'da', 'de', 'antik', 'kenti', 'kent',
+    'muzesi', 'müzesi', 'muzeleri', 'müzeleri', 'cami', 'camii',
+    'kalesi', 'kale', 'plaji', 'plajı', 'milli', 'parki', 'parkı',
+    'veya', 've', 'tarihi', 'eski', 'yeni'
+}
+
+
+def tb_norm_text(s: str) -> str:
+    s = tr_lower_text(s or '')
+    s = s.translate(str.maketrans({
+        'ç': 'c', 'ğ': 'g', 'ı': 'i', 'ö': 'o', 'ş': 's', 'ü': 'u',
+        'â': 'a', 'ê': 'e', 'î': 'i', 'û': 'u'
+    }))
+    s = unicodedata.normalize('NFKD', s)
+    s = ''.join(ch for ch in s if not unicodedata.combining(ch))
+    s = re.sub(r'[^a-z0-9 ]+', ' ', s)
+    return norm_ws(s)
+
+
+def tb_tokens(s: str) -> List[str]:
+    return [t for t in re.findall(r'[a-z0-9]+', tb_norm_text(s)) if len(t) >= 3 and t not in TATILBUDUR_MATCH_STOPWORDS]
+
+
+def match_tatilbudur_title(title: str, name: str, desc: str = '', source_category_name: str = '') -> float:
+    title_n = tb_norm_text(title)
+    name_n = tb_norm_text(name)
+    desc_n = tb_norm_text(desc)
+    cat_n = tb_norm_text(source_category_name)
+    combined_n = f'{name_n} {desc_n} {cat_n}'
+    if title_n and (title_n in name_n or name_n in title_n):
+        return 5.0
+
+    parts = [p.strip() for p in re.split(r'[/,&()]', title_n) if p.strip()]
+    for p in parts:
+        if len(p) >= 4 and p in name_n:
+            return 4.2
+
+    tt = set(tb_tokens(title))
+    if not tt:
+        return 0.0
+    nt = set(tb_tokens(name))
+    dt = set(tb_tokens(desc)) | set(tb_tokens(source_category_name))
+    overlap_name = len(tt & nt) / len(tt)
+    overlap_all = len(tt & (nt | dt)) / len(tt)
+    score = max(overlap_name * 3.5, overlap_all * 2.2)
+    if overlap_name >= 0.6:
+        score += 0.8
+    if overlap_all >= 0.8:
+        score += 0.5
+    if any(tok in combined_n for tok in ('stone bridge', 'hagia sophia', 'blue mosque')):
+        score += 0.1
+    return score
+
+
+def best_tatilbudur_match(titles: List[str], name: str, desc: str = '', source_category_name: str = '') -> Tuple[str, int, float]:
+    best_title = ''
+    best_idx = 999
+    best_score = 0.0
+    for idx, title in enumerate(titles):
+        score = match_tatilbudur_title(title, name, desc, source_category_name)
+        if score > best_score or (score == best_score and idx < best_idx):
+            best_title = title
+            best_idx = idx
+            best_score = score
+    return best_title, best_idx, best_score
+
+
 def title_quality_name(raw: str) -> str:
     raw = norm_ws(html_lib.unescape(raw or ''))
     if not raw:
@@ -408,6 +476,7 @@ class CandidatePOI:
     score: float
     app_category: str
     minutes: int
+    tatilbudur_title: str = ''
 
 
 class HttpClient:
@@ -485,6 +554,7 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
     out: List[CandidatePOI] = []
     city_fold = tr_fold(city_name)
     priority_titles = TATILBUDUR_PRIORITY_TITLES.get(city_name) or CITY_ICONIC_PRIORITY_BOOSTS.get(city_name, [])
+    tatilbudur_titles = TATILBUDUR_PRIORITY_TITLES.get(city_name) or []
     city_manual_phrases = [low_tr(x) for x in priority_titles]
     for x in items:
         try:
@@ -513,6 +583,18 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
         lf_desc = low_tr(desc)
         lf_cat = low_tr(source_category_name)
         text = f'{lf_name} {lf_desc} {lf_cat}'
+        matched_tb_title = ''
+        matched_tb_idx = 999
+        matched_tb_score = 0.0
+        if tatilbudur_titles:
+            matched_tb_title, matched_tb_idx, matched_tb_score = best_tatilbudur_match(
+                tatilbudur_titles, name, desc, source_category_name
+            )
+            if matched_tb_score < 1.8:
+                matched_tb_title = ''
+                matched_tb_idx = 999
+                matched_tb_score = 0.0
+        tb_keep = bool(matched_tb_title)
 
         # Hard reject obvious infrastructure / non-tourism transport records unless explicitly whitelisted historical engineering sites.
         negative_hits = sum(1 for k in INFRA_NEGATIVE_KEYWORDS if k in text)
@@ -522,20 +604,20 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
             'justinianus', 'tarihi köprü', 'tarihi kopru'
         ])
         titus_tunnel_whitelist = 'titus tüneli' in text or 'titus tuneli' in text
-        if 'baraj' in text:
+        if 'baraj' in text and not tb_keep:
             continue
-        if ('tünel' in text or 'tunel' in text) and not titus_tunnel_whitelist:
+        if ('tünel' in text or 'tunel' in text) and not titus_tunnel_whitelist and not tb_keep:
             continue
-        if ('köprü' in text or 'kopru' in text) and not historic_bridge_whitelist:
+        if ('köprü' in text or 'kopru' in text) and not historic_bridge_whitelist and not tb_keep:
             continue
-        if negative_hits and strong_positive_hits < 6:
+        if negative_hits and strong_positive_hits < 6 and not tb_keep:
             continue
 
         # Reject low-value locality-level religious stops (village/neighborhood mosques etc.)
         has_locality_marker = any(k in text for k in LOW_TOURISM_LOCALITY_KEYWORDS)
         has_religious_marker = any(k in text for k in RELIGIOUS_STRUCTURE_KEYWORDS)
         locality_whitelisted = any(k in text for k in LOCALITY_WORTHY_WHITELIST)
-        if has_locality_marker and has_religious_marker and not locality_whitelisted:
+        if has_locality_marker and has_religious_marker and not locality_whitelisted and not tb_keep:
             continue
 
         # Generic city-level placeholders are low quality for POI list.
@@ -558,6 +640,9 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
                 # Strong city-specific manual ordering layer (decreasing by priority).
                 score += max(8.0, 22.0 - (idx * 2.5))
                 break
+        if tb_keep:
+            score += 28.0 - min(matched_tb_idx, 10) * 1.6
+            score += min(matched_tb_score, 5.0)
 
         if 'unesco' in text:
             score += 4
@@ -632,14 +717,21 @@ def culture_to_candidates(city_name: str, items: List[dict], category_map: Dict[
             score=score,
             app_category=app_category,
             minutes=minutes,
+            tatilbudur_title=matched_tb_title,
         ))
     return out
 
 
 def dedupe_pois(cands: List[CandidatePOI]) -> List[CandidatePOI]:
     seen = set()
+    seen_tb = set()
     out = []
     for c in sorted(cands, key=lambda x: (-x.score, x.name)):
+        if c.tatilbudur_title:
+            tb_key = tr_fold(c.tatilbudur_title)
+            if tb_key in seen_tb:
+                continue
+            seen_tb.add(tb_key)
         key = tr_fold(re.sub(r'\b(muzesi|muzeler|muzeleri|camii|cami|kalesi|kale|sarayi|sarayı)\b', '', low_tr(c.name)))
         key = key[:60]
         key2 = (key, round(c.lat, 3), round(c.lon, 3))
@@ -692,8 +784,11 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
     subtype_counts: Dict[str, int] = {}
     priority_titles = TATILBUDUR_PRIORITY_TITLES.get(city_name) or CITY_ICONIC_PRIORITY_BOOSTS.get(city_name, [])
     city_manual_phrases = [low_tr(x) for x in priority_titles]
+    tb_rank_by_title = {norm_ws(t): i for i, t in enumerate(TATILBUDUR_PRIORITY_TITLES.get(city_name, []))}
 
     def manual_rank(c: CandidatePOI) -> int:
+        if c.tatilbudur_title:
+            return tb_rank_by_title.get(norm_ws(c.tatilbudur_title), 999)
         name_cat = low_tr(c.name + ' ' + c.source_category_name)
         for idx, phrase in enumerate(city_manual_phrases):
             if not phrase:
@@ -814,7 +909,7 @@ def select_pois(city_name: str, cands: List[CandidatePOI], existing_pois: List[d
 
     return [
         {
-            'name': c.name,
+            'name': c.tatilbudur_title or c.name,
             'category': c.app_category,
             'coordinate': {'latitude': round(c.lat, 6), 'longitude': round(c.lon, 6)},
             'shortDescription': c.desc,
